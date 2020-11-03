@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand />
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
@@ -10,19 +20,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30620286-5c79-4157-9980-4d78a8d37834" name="Default Changelist" comment="first version">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/26107f23-0b0c-4c05-8a6c-beb48bc948fb.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/26107f23-0b0c-4c05-8a6c-beb48bc948fb/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/startbootstrap-sb-admin-2-gh-pages.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="30620286-5c79-4157-9980-4d78a8d37834" name="Default Changelist" comment="update 1">
+      <change afterPath="$PROJECT_DIR$/table-basic.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tables-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blank2.php" beforeDir="false" afterPath="$PROJECT_DIR$/blank2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cust-inf.php" beforeDir="false" afterPath="$PROJECT_DIR$/cust-inf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cust-service.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +58,15 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1iBRGNUjngqaFq9tnYi4X6nM1WS" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -149,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604385104776</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update 1">
+      <created>1604416600659</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1604416600659</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,8 +184,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first version" />
-    <option name="LAST_COMMIT_MESSAGE" value="first version" />
+    <MESSAGE value="update 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="update 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="276" y="0" key="#CLI_Interpreters" timestamp="1603784986428">
@@ -192,6 +210,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.852@0.0.1600.852" timestamp="1603981496092" />
+    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog" timestamp="1604416526129">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog/0.0.1600.852@0.0.1600.852" timestamp="1604416526129" />
     <state x="526" y="101" key="FileChooserDialogImpl" timestamp="1604296574881">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -240,6 +262,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1600.852@0.0.1600.852" timestamp="1601383844189" />
+    <state x="291" y="91" key="Vcs.Push.Dialog.v2" timestamp="1604416610467">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="291" y="91" key="Vcs.Push.Dialog.v2/0.0.1600.852@0.0.1600.852" timestamp="1604416610467" />
     <state x="613" y="253" width="392" height="345" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603869102126">
       <screen x="0" y="0" width="1600" height="852" />
     </state>

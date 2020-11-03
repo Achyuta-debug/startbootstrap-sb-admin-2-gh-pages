@@ -258,6 +258,7 @@ include "function.php";
                     <!-- /.container-fluid -->
 
                 </div>
+            </div>
                 <!-- End of Main Content -->
 
                 <!-- Footer -->

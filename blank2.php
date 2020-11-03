@@ -144,6 +144,7 @@
 
 
             </div>
+        </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
@@ -205,4 +206,4 @@
 </body>
 </html>
 
-<?php
+

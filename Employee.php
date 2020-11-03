@@ -1242,6 +1242,7 @@ if (isset($_POST['submit-emp'])){
 
 
                 </div>
+            </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
