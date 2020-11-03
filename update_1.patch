@@ -1,0 +1,10 @@
+Index: cust-service.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- cust-service.php	(date 1604416232740)
++++ cust-service.php	(date 1604416232740)
+@@ -0,0 +1,2 @@
++<?php
++?>
