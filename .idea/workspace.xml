@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="30620286-5c79-4157-9980-4d78a8d37834" name="Default Changelist" comment="first version">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/26107f23-0b0c-4c05-8a6c-beb48bc948fb.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/26107f23-0b0c-4c05-8a6c-beb48bc948fb/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/startbootstrap-sb-admin-2-gh-pages.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectId" id="1iBRGNUjngqaFq9tnYi4X6nM1WS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../xampp/htdocs/first" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30620286-5c79-4157-9980-4d78a8d37834" name="Default Changelist" comment="" />
+      <created>1601378901803</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601378901803</updated>
+      <workItem from="1601378902904" duration="27643000" />
+      <workItem from="1602297836477" duration="42413000" />
+      <workItem from="1602477813177" duration="346000" />
+      <workItem from="1602478256940" duration="315000" />
+      <workItem from="1602478851530" duration="5397000" />
+      <workItem from="1602495250717" duration="8738000" />
+      <workItem from="1603533560030" duration="215000" />
+      <workItem from="1603691586825" duration="33000" />
+      <workItem from="1603708800818" duration="668000" />
+      <workItem from="1603709538875" duration="6322000" />
+      <workItem from="1603718488209" duration="480000" />
+      <workItem from="1603769028568" duration="43000" />
+      <workItem from="1603769152660" duration="76000" />
+      <workItem from="1603769266912" duration="339000" />
+      <workItem from="1603770184602" duration="20000" />
+      <workItem from="1603770230210" duration="153000" />
+      <workItem from="1603770408474" duration="1717000" />
+      <workItem from="1603775259731" duration="33000" />
+      <workItem from="1603775312586" duration="50000" />
+      <workItem from="1603775463504" duration="1906000" />
+      <workItem from="1603777448599" duration="1214000" />
+      <workItem from="1603779256996" duration="660000" />
+      <workItem from="1603780472346" duration="644000" />
+      <workItem from="1603781271283" duration="1858000" />
+      <workItem from="1603783851601" duration="243000" />
+      <workItem from="1603784125221" duration="849000" />
+      <workItem from="1603785016271" duration="26000" />
+      <workItem from="1603785064671" duration="46000" />
+      <workItem from="1603786179305" duration="21000" />
+      <workItem from="1603786241070" duration="508000" />
+      <workItem from="1603786789246" duration="2996000" />
+      <workItem from="1603794554991" duration="35780000" />
+      <workItem from="1603942851496" duration="18761000" />
+      <workItem from="1603971835464" duration="3105000" />
+      <workItem from="1603975708992" duration="10597000" />
+      <workItem from="1603992982889" duration="530000" />
+      <workItem from="1603993539836" duration="431000" />
+      <workItem from="1603993997350" duration="300000" />
+      <workItem from="1604030237610" duration="3398000" />
+      <workItem from="1604220145997" duration="2491000" />
+      <workItem from="1604228350149" duration="8161000" />
+      <workItem from="1604247985014" duration="2137000" />
+      <workItem from="1604296251709" duration="1285000" />
+      <workItem from="1604375450580" duration="133000" />
+      <workItem from="1604375612263" duration="6593000" />
+    </task>
+    <task id="LOCAL-00001" summary="first version">
+      <created>1604249646164</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604249646164</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first version">
+      <created>1604385104776</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604385104776</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first version" />
+    <option name="LAST_COMMIT_MESSAGE" value="first version" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="276" y="0" key="#CLI_Interpreters" timestamp="1603784986428">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="276" y="0" key="#CLI_Interpreters/0.0.1600.852@0.0.1600.852" timestamp="1603784986428" />
+    <state x="656" y="254" key="#Notifications" timestamp="1604248592835">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="656" y="254" key="#Notifications/0.0.1600.852@0.0.1600.852" timestamp="1604248592835" />
+    <state x="435" y="0" key="#PHP" timestamp="1601379099012">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="435" y="0" key="#PHP/0.0.1600.852@0.0.1600.852" timestamp="1601379099012" />
+    <state x="60" y="229" key="#SQL_Dialects" timestamp="1603713048695">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="60" y="229" key="#SQL_Dialects/0.0.1600.852@0.0.1600.852" timestamp="1603713048695" />
+    <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603981496092">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.852@0.0.1600.852" timestamp="1603981496092" />
+    <state x="526" y="101" key="FileChooserDialogImpl" timestamp="1604296574881">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="526" y="101" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1604296574881" />
+    <state x="559" y="297" key="Github.ShareDialog" timestamp="1604249848018">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="559" y="297" key="Github.ShareDialog/0.0.1600.852@0.0.1600.852" timestamp="1604249848018" />
+    <state x="451" y="55" key="Github.UntrackedFilesDialog" timestamp="1604248813027">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="451" y="55" key="Github.UntrackedFilesDialog/0.0.1600.852@0.0.1600.852" timestamp="1604248813027" />
+    <state width="1054" height="197" key="GridCell.Tab.0.bottom" timestamp="1604220191919">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1054" height="197" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1604220191919" />
+    <state width="1054" height="197" key="GridCell.Tab.0.center" timestamp="1604220191919">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1054" height="197" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1604220191919" />
+    <state width="1054" height="197" key="GridCell.Tab.0.left" timestamp="1604220191919">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1054" height="197" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1604220191919" />
+    <state width="1054" height="197" key="GridCell.Tab.0.right" timestamp="1604220191919">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="1054" height="197" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1604220191919" />
+    <state width="263" height="571" key="HiddenNamespacesPopup" timestamp="1603855262835">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="263" height="571" key="HiddenNamespacesPopup/0.0.1600.852@0.0.1600.852" timestamp="1603855262835" />
+    <state x="460" y="88" key="NewPhpClassDialog" timestamp="1602473976882">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="460" y="88" key="NewPhpClassDialog/0.0.1600.852@0.0.1600.852" timestamp="1602473976882" />
+    <state x="589" y="328" key="NewPhpFileDialog" timestamp="1604231656610">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="589" y="328" key="NewPhpFileDialog/0.0.1600.852@0.0.1600.852" timestamp="1604231656610" />
+    <state x="183" y="0" key="SettingsEditor" timestamp="1604388334205">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="183" y="0" key="SettingsEditor/0.0.1600.852@0.0.1600.852" timestamp="1604388334205" />
+    <state width="623" height="498" key="SwitcherDM" timestamp="1601383844189">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state width="623" height="498" key="SwitcherDM/0.0.1600.852@0.0.1600.852" timestamp="1601383844189" />
+    <state x="613" y="253" width="392" height="345" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603869102126">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="613" y="253" width="392" height="345" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1600.852@0.0.1600.852" timestamp="1603869102126" />
+    <state x="501" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1603855250049">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="501" y="0" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1600.852@0.0.1600.852" timestamp="1603855250049" />
+    <state x="561" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604388012263">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="561" y="316" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.852@0.0.1600.852" timestamp="1604388012263" />
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1603784981556">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1600.852@0.0.1600.852" timestamp="1603784981556" />
+    <state x="371" y="182" key="run.anything.popup" timestamp="1603957078760">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="371" y="182" key="run.anything.popup/0.0.1600.852@0.0.1600.852" timestamp="1603957078760" />
+    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1603811773833">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1600.852@0.0.1600.852" timestamp="1603811773833" />
+  </component>
+</project>
