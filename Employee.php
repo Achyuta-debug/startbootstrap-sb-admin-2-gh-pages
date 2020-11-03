@@ -179,7 +179,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="blank3.php" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
 
                                             <input type="submit" name="101" value="101" class="btn btn-danger">
                                         </form>
@@ -224,7 +224,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="102" value="102" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Standard</div>
@@ -269,7 +269,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="103" value="103" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Standard</div>
@@ -314,7 +314,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="104" value="104" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Standard</div>
@@ -359,7 +359,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="105" value="105" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Standard</div>
@@ -404,7 +404,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="106" value="106" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Standard</div>
@@ -449,7 +449,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="107" value="107" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Standard</div>
@@ -494,7 +494,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="108" value="108" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Standard</div>
@@ -539,7 +539,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="201" value="201" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -583,7 +583,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="202" value="202" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -627,7 +627,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="203" value="203" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -671,7 +671,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="204" value="204" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -715,7 +715,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="205" value="205" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -759,7 +759,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="206" value="206" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -803,7 +803,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="207" value="207" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -847,7 +847,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="208" value="208" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Deluxe</div>
@@ -892,7 +892,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="301" value="301" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
@@ -936,7 +936,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="302" value="302" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
@@ -980,7 +980,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="303" value="303" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
@@ -1024,7 +1024,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="304" value="304" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
@@ -1068,7 +1068,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="305" value="305" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
@@ -1112,7 +1112,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="306" value="306" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
@@ -1156,7 +1156,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="307" value="307" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
@@ -1200,7 +1200,7 @@ if (isset($_POST['submit-emp'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <form class="form-group" action="register.html" method="post">
+                                        <form class="form-group" action="cust-inf.php" method="post">
                                             <input type="submit" name="308" value="308" class="btn btn-danger">
                                         </form>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">Super-Deluxe</div>
