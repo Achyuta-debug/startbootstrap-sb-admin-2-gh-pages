@@ -21,13 +21,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30620286-5c79-4157-9980-4d78a8d37834" name="Default Changelist" comment="update 1">
-      <change afterPath="$PROJECT_DIR$/table-basic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tables-2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/Employee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blank2.php" beforeDir="false" afterPath="$PROJECT_DIR$/blank2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cust-inf.php" beforeDir="false" afterPath="$PROJECT_DIR$/cust-inf.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cust-service.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-services.php" beforeDir="false" afterPath="$PROJECT_DIR$/customer-services.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +138,7 @@
       <workItem from="1604296251709" duration="1285000" />
       <workItem from="1604375450580" duration="133000" />
       <workItem from="1604375612263" duration="6593000" />
+      <workItem from="1604460093837" duration="3393000" />
     </task>
     <task id="LOCAL-00001" summary="first version">
       <created>1604249646164</created>
@@ -165,7 +161,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604416600659</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update 1">
+      <created>1604423430305</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604423430305</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update 1">
+      <created>1604423573974</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1604423573974</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,10 +220,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.852@0.0.1600.852" timestamp="1603981496092" />
-    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog" timestamp="1604416526129">
+    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog" timestamp="1604423615844">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog/0.0.1600.852@0.0.1600.852" timestamp="1604416526129" />
+    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog/0.0.1600.852@0.0.1600.852" timestamp="1604423615844" />
     <state x="526" y="101" key="FileChooserDialogImpl" timestamp="1604296574881">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -246,6 +256,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state width="263" height="571" key="HiddenNamespacesPopup/0.0.1600.852@0.0.1600.852" timestamp="1603855262835" />
+    <state x="151" y="63" key="MergeDialog" timestamp="1604423554497">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="151" y="63" key="MergeDialog/0.0.1600.852@0.0.1600.852" timestamp="1604423554497" />
     <state x="460" y="88" key="NewPhpClassDialog" timestamp="1602473976882">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -262,10 +276,10 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1600.852@0.0.1600.852" timestamp="1601383844189" />
-    <state x="291" y="91" key="Vcs.Push.Dialog.v2" timestamp="1604416610467">
+    <state x="291" y="91" key="Vcs.Push.Dialog.v2" timestamp="1604423598871">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="291" y="91" key="Vcs.Push.Dialog.v2/0.0.1600.852@0.0.1600.852" timestamp="1604416610467" />
+    <state x="291" y="91" key="Vcs.Push.Dialog.v2/0.0.1600.852@0.0.1600.852" timestamp="1604423598871" />
     <state x="613" y="253" width="392" height="345" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603869102126">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -286,9 +300,9 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="371" y="182" key="run.anything.popup/0.0.1600.852@0.0.1600.852" timestamp="1603957078760" />
-    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1603811773833">
+    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1604462634803">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1600.852@0.0.1600.852" timestamp="1603811773833" />
+    <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup/0.0.1600.852@0.0.1600.852" timestamp="1604462634803" />
   </component>
 </project>
