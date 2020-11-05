@@ -74,7 +74,7 @@ elseif (isset($_POST['308'])) {
     $room = $_POST['302'];
 }
 if($room>=101&&$room<=108){
-    $type="Stanadard";
+    $type="Standard";
 }
 if($room>=201&&$room<=208) {
     $type = "Deluxe";
