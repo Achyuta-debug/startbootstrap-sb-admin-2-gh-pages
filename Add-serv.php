@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(isset($_POST['roomno'])){
+    $_SESSION['roomno']=$_POST['roomno'];
+    header("Location:/startbootstrap-sb-admin-2-gh-pages/customer-services.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -159,7 +167,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
-                                                <form action='customer-services.php' method='post'>
+                                                <form action='Add-serv.php' method='post'>
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                     <thead class="bg-primary">
                                                     <tr class="text-white">

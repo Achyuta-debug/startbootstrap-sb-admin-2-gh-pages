@@ -1,19 +1,15 @@
 <?php
+session_start();
 include "function.php";
-if (isset($_POST['roomno'])) {
-    $var = $_POST['roomno'];
-    $var = custid($var);
-    echo $var;
-}
-
     if (isset($_POST['submit'])) {
+        $roomno=$_SESSION['roomno'];
+        $cid=custid($roomno);
         $values = $_POST['serv'];
-        $nvalues = implode(",", $values);
         $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
         $checkbox = $_POST['serv'];
         for ($i = 0; $i < count($checkbox); $i++) {
             $check_id = $checkbox[$i];
-            $query = "INSERT INTO uses VALUES ('DELCUSbwvxm','$check_id')";
+            $query = "INSERT INTO uses VALUES ('$cid','$check_id')";
             $result = mysqli_query($connect, $query);
             if (!$result) {
                 die("Query failed" . mysqli_connect_error());
