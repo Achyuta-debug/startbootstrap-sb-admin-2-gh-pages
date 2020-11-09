@@ -1,3 +1,29 @@
+<?php
+include "function.php";
+if (isset($_POST['roomno'])) {
+    $var = $_POST['roomno'];
+    $var = custid($var);
+    echo $var;
+}
+
+    if (isset($_POST['submit'])) {
+        $values = $_POST['serv'];
+        $nvalues = implode(",", $values);
+        $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+        $checkbox = $_POST['serv'];
+        for ($i = 0; $i < count($checkbox); $i++) {
+            $check_id = $checkbox[$i];
+            $query = "INSERT INTO uses VALUES ('DELCUSbwvxm','$check_id')";
+            $result = mysqli_query($connect, $query);
+            if (!$result) {
+                die("Query failed" . mysqli_connect_error());
+            }
+        }
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +39,8 @@
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -31,7 +58,7 @@
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar - Brand -->
+        <!-- Sidebar - Brand -->
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Admin-reg.php">
             <div class="sidebar-brand-icon rotate-n-15">
@@ -57,11 +84,13 @@
 
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+               aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-user-friends"></i>
                 <span>Customer</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
                     <a class="collapse-item" href="utilities-color.html">View all</a>
@@ -106,12 +135,14 @@
 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Achyuta</span>
                             <!--                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                         </a>
                         <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile settings
@@ -139,43 +170,46 @@
                         <h4 class="m-0 font-weight-bold text-primary">Add Services</h4>
                     </div>
                     <div class="card-body">
+                        <form method="post" action="customer-services.php">
                         <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead class="bg-primary">
-                                <tr class="text-white">
-                                    <th>Name</th>
-                                    <th>Customer-id</th>
-                                    <th>Room-type</th>
-                                    <th>Check-out date</th>
-                                    <th>Services</th>
-                                </tr>
-                                </thead>
-                                <tfoot>
-                                <tbody>
-                                <?php
-                                $connection = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
-                                if(!$connection){
-                                    die("query failed".mysqli_connect_error());
-                                }
-                                $query="SELECT fname,customer_id,room_no,room_type,to_date FROM customers ";
-                                $result=$connection->query($query);
-                                if($result->num_rows>0){
-                                    while($row=$result->fetch_assoc()){
-                                    $name=$row['fname'];$cus_id=$row['customer_id']; $roomno=$row['room_no'];
-                                    $todate=$row['to_date']; $roomtype=$row['room_type'];
-                                        echo "<tr><td>".$name."</td><td>".$cus_id."</td><td>".
-                                             $roomtype."</td><td>".$todate.
-                                            "</td><td><form action='Add-serv.php' method='post' >
-                                    <input type='submit' name='$roomno' value='$roomno' class='btn btn-primary'> </td></form>";
+                                <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
+                                    <thead class="bg-primary">
+                                    <tr class="text-white">
+                                        <th>Id</th>
+                                        <th>name</th>
+                                        <th>Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tbody>
+                                    <?php
+                                    $connection = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+                                    if (!$connection) {
+                                        die("query failed" . mysqli_connect_error());
                                     }
-                                }
-                                else{
-                                    echo "no entries found";
-                                }
-                                ?>
+                                    $query = "SELECT * FROM services";
+                                    $result = $connection->query($query);
+                                    if ($result->num_rows > 0) {
+                                        while ($row = $result->fetch_assoc()) {
+                                            $serviceid = $row['service_id'];
+                                            $servicename = $row['service_name'];
+                                            $price = $row['price'];
+                                            echo "<tr class='text-dark font-weight-bold'><td>" . $serviceid . "</td><td>" .
+                                                $servicename .
+                                                "</td><td>
+                                    <input type='checkbox' name='serv[]' value='$serviceid' class='btn btn-primary'/> $price</td>";
+                                        }
+                                    } else {
+                                        echo "no entries found";
+                                    }
+                                    ?>
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="Add" name="submit" class="btn btn-primary">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -186,6 +220,9 @@
         </div>
         <!-- End of Main Content -->
 
+        <!--        <div class="alert alert-primary" role="alert">-->
+        <!--            SERVICE Added Successfully.-->
+        <!--        </div>-->
         <!-- Footer -->
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
@@ -208,7 +245,8 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

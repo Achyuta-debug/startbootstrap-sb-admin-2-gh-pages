@@ -55,6 +55,18 @@ function custinfo($roomno){
     return $row;
 }
 
+function custid($roomno){
+     $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+     $query = "SELECT customer_id FROM customers WHERE room_no = $roomno";
+     $result = mysqli_query($connect, $query);
+     if(!$result){
+        die("query failed".mysqli_connect_error());
+     }
+     $row=mysqli_fetch_array($result);
+     $id=$row['customer_id'];
+     return $id;
+}
+
 function returnroomno()
 {
     if (isset($_POST['101'])) {

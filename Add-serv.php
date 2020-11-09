@@ -159,6 +159,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="table-responsive">
+                                                <form action='customer-services.php' method='post'>
                                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                                     <thead class="bg-primary">
                                                     <tr class="text-white">
@@ -185,8 +186,8 @@
                                                             $todate=$row['to_date']; $roomtype=$row['room_type'];
                                                             echo "<tr><td>".$name."</td><td>".$cus_id."</td><td>".
                                                                 $roomtype."</td><td>".$todate.
-                                                                "</td><td><form action='Add-serv.php' method='post' >
-                                    <input type='submit' name='$roomno' value='$roomno' class='btn btn-primary'> </td></form>";
+                                                                "</td><td>
+                                                        <input type='submit' name='roomno' value='$roomno' class='btn btn-primary'> </td>";
                                                         }
                                                     }
                                                     else{
@@ -196,7 +197,8 @@
 
                                                     </tbody>
                                                 </table>
-                                            </div
+                                                </form>
+                                            </div>
 
                                         </div>
                                     </div>
