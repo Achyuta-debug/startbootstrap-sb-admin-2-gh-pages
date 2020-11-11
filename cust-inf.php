@@ -53,45 +53,26 @@ $name=name();
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="Employee.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <i class="fas fa-fw fa-hotel"></i>
+                    <span>View rooms</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                   aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Employee</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <!--            <h6 class="collapse-header">Custom Components:</h6>-->
-                        <a class="collapse-item" href="Admin-reg.php">Register</a>
-                        <a class="collapse-item" href="tables.html">Update</a>
-                        <a class="collapse-item" href="tables.html">Delete</a>
-                        <a class="collapse-item" href="tables.html">View</a>
-                        <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
-                    </div>
-                </div>
-            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                   aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-user"></i>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-user-friends"></i>
                     <span>Customer</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                     data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                        <a class="collapse-item" href="utilities-color.html">View</a>
-                        <a class="collapse-item" href="utilities-border.html">View bills</a>
+                        <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
+                        <a class="collapse-item" href="utilities-color.html">Update information</a>
                     </div>
                 </div>
             </li>
@@ -317,7 +298,7 @@ $name=name();
                     <div class="form-row">
                         <div class="form-group col-md-12 ">
                             <div class="text-center">
-                                <form action="invoice.php" method="post">
+                                 <form action="invoice.php"  method="post">
                                 <input type="submit" value="Checkout"
                                        name="submit" class="btn btn-danger col-sm-5 btn-user ">
                                 </form>
@@ -327,7 +308,7 @@ $name=name();
                        <div class="form row">
                         <div class="form-group col-md-12 ">
                             <div class="text-right">
-                                    <form action="invoice.php" method="post">
+                                    <form action="invoice.php" method="post" target="_blank">
                                         <input type="submit" value="Print Bill"
                                                name="submit-2" class="btn btn-primary col-sm-1 btn-user ">
                                     </form>

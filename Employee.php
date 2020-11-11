@@ -98,10 +98,9 @@ if (isset($_POST['submit-emp'])){
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="Add-serv.php">View all</a>
-                    <a class="collapse-item" href="utilities-color.html">Delete</a>
-                    <a class="collapse-item" href="utilities-color.html">Update</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
+                    <a class="collapse-item" href="utilities-color.html">Update information</a>
+
                 </div>
             </div>
         </li>

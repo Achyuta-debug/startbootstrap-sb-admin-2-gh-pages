@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "function.php";
+$name=name();
 if(isset($_POST['roomno'])){
     $_SESSION['roomno']=$_POST['roomno'];
     header("Location:/startbootstrap-sb-admin-2-gh-pages/customer-services.php");
@@ -76,10 +78,8 @@ if(isset($_POST['roomno'])){
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="utilities-color.html">View all</a>
-                    <a class="collapse-item" href="utilities-color.html">Delete</a>
-                    <a class="collapse-item" href="utilities-color.html">Update</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
+                    <a class="collapse-item" href="utilities-color.html">Update information</a>
                 </div>
             </div>
         </li>
@@ -120,7 +120,7 @@ if(isset($_POST['roomno'])){
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Achyuta</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name?></span>
                             <!--                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                         </a>
                         <!-- Dropdown - User Information -->

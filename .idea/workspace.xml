@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -21,9 +24,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30620286-5c79-4157-9980-4d78a8d37834" name="Default Changelist" comment="update 1">
-      <change afterPath="$PROJECT_DIR$/Add-serv.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/26107f23-0b0c-4c05-8a6c-beb48bc948fb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/26107f23-0b0c-4c05-8a6c-beb48bc948fb/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Add-serv.php" beforeDir="false" afterPath="$PROJECT_DIR$/Add-serv.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/Employee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cust-inf.php" beforeDir="false" afterPath="$PROJECT_DIR$/cust-inf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cust-reg.php" beforeDir="false" afterPath="$PROJECT_DIR$/cust-reg.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/customer-services.php" beforeDir="false" afterPath="$PROJECT_DIR$/customer-services.php" afterDir="false" />
     </list>
@@ -71,7 +79,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CNS lab" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,22 +87,32 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Code with Me" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="PHPUnit.fpdf">
+    <configuration name="fpdf" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner directory="$PROJECT_DIR$/fpdf" />
+      <method v="2" />
     </configuration>
     <configuration name="Unnamed" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" nameIsGenerated="true" document_root="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method v="2" />
     </configuration>
   </component>
@@ -157,7 +175,27 @@
       <workItem from="1604460093837" duration="13356000" />
       <workItem from="1604556954946" duration="393000" />
       <workItem from="1604559711470" duration="148000" />
-      <workItem from="1604567765492" duration="341000" />
+      <workItem from="1604567765492" duration="2483000" />
+      <workItem from="1604578563121" duration="29000" />
+      <workItem from="1604581435147" duration="1095000" />
+      <workItem from="1604631335323" duration="107000" />
+      <workItem from="1604631634437" duration="40000" />
+      <workItem from="1604632087086" duration="549000" />
+      <workItem from="1604632703406" duration="640000" />
+      <workItem from="1604638654706" duration="1277000" />
+      <workItem from="1604661039097" duration="460000" />
+      <workItem from="1604685819430" duration="975000" />
+      <workItem from="1604721625836" duration="1626000" />
+      <workItem from="1604723674177" duration="1325000" />
+      <workItem from="1604729486718" duration="45000" />
+      <workItem from="1604729654008" duration="42000" />
+      <workItem from="1604730460148" duration="2115000" />
+      <workItem from="1604745921329" duration="16625000" />
+      <workItem from="1604814586888" duration="5080000" />
+      <workItem from="1604889361142" duration="8484000" />
+      <workItem from="1604906334295" duration="19261000" />
+      <workItem from="1604981763182" duration="28714000" />
+      <workItem from="1605066881108" duration="10181000" />
     </task>
     <task id="LOCAL-00001" summary="first version">
       <created>1604249646164</created>
@@ -201,7 +239,42 @@
       <option name="project" value="LOCAL" />
       <updated>1604463585944</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2">
+      <created>1604568277185</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604568277185</updated>
+    </task>
+    <task id="LOCAL-00008" summary="-">
+      <created>1604893538396</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1604893538396</updated>
+    </task>
+    <task id="LOCAL-00009" summary="-">
+      <created>1604899185038</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604899185038</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1">
+      <created>1604909374770</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604909374770</updated>
+    </task>
+    <task id="LOCAL-00011" summary="-">
+      <created>1605069191311</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605069191311</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +296,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first version" />
     <MESSAGE value="update 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="update 1" />
+    <MESSAGE value="2" />
+    <MESSAGE value="1" />
+    <MESSAGE value="-" />
+    <option name="LAST_COMMIT_MESSAGE" value="-" />
   </component>
   <component name="WindowStateProjectService">
     <state x="276" y="0" key="#CLI_Interpreters" timestamp="1604568045668">
@@ -238,22 +314,34 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="435" y="0" key="#PHP/0.0.1600.852@0.0.1600.852" timestamp="1604557275497" />
+    <state x="291" y="0" key="#Plugins" timestamp="1604632107478">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="291" y="0" key="#Plugins/0.0.1600.852@0.0.1600.852" timestamp="1604632107478" />
     <state x="60" y="229" key="#SQL_Dialects" timestamp="1603713048695">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="60" y="229" key="#SQL_Dialects/0.0.1600.852@0.0.1600.852" timestamp="1603713048695" />
-    <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603981496092">
+    <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604735382067">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.852@0.0.1600.852" timestamp="1603981496092" />
-    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog" timestamp="1604423615844">
+    <state x="249" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.852@0.0.1600.852" timestamp="1604735382067" />
+    <state x="491" y="71" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1604578588465">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog/0.0.1600.852@0.0.1600.852" timestamp="1604423615844" />
-    <state x="526" y="101" key="FileChooserDialogImpl" timestamp="1604568066784">
+    <state x="491" y="71" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1600.852@0.0.1600.852" timestamp="1604578588465" />
+    <state x="262" y="0" key="CommitChangelistDialog2" timestamp="1604723407795">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="526" y="101" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1604568066784" />
+    <state x="262" y="0" key="CommitChangelistDialog2/0.0.1600.852@0.0.1600.852" timestamp="1604723407795" />
+    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog" timestamp="1604568444985">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="91" y="91" width="1418" height="670" key="DiffContextDialog/0.0.1600.852@0.0.1600.852" timestamp="1604568444985" />
+    <state x="526" y="101" key="FileChooserDialogImpl" timestamp="1604721490814">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="526" y="101" key="FileChooserDialogImpl/0.0.1600.852@0.0.1600.852" timestamp="1604721490814" />
     <state x="559" y="297" key="Github.ShareDialog" timestamp="1604249848018">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -262,50 +350,50 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="451" y="55" key="Github.UntrackedFilesDialog/0.0.1600.852@0.0.1600.852" timestamp="1604248813027" />
-    <state width="1544" height="198" key="GridCell.Tab.0.bottom" timestamp="1604567920849">
+    <state width="1544" height="198" key="GridCell.Tab.0.bottom" timestamp="1604813767373">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1544" height="198" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1604567920849" />
-    <state width="1544" height="198" key="GridCell.Tab.0.center" timestamp="1604567920849">
+    <state width="1544" height="198" key="GridCell.Tab.0.bottom/0.0.1600.852@0.0.1600.852" timestamp="1604813767373" />
+    <state width="1544" height="198" key="GridCell.Tab.0.center" timestamp="1604813767373">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1544" height="198" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1604567920849" />
-    <state width="1544" height="198" key="GridCell.Tab.0.left" timestamp="1604567920849">
+    <state width="1544" height="198" key="GridCell.Tab.0.center/0.0.1600.852@0.0.1600.852" timestamp="1604813767373" />
+    <state width="1544" height="198" key="GridCell.Tab.0.left" timestamp="1604813767373">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1544" height="198" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1604567920849" />
-    <state width="1544" height="198" key="GridCell.Tab.0.right" timestamp="1604567920849">
+    <state width="1544" height="198" key="GridCell.Tab.0.left/0.0.1600.852@0.0.1600.852" timestamp="1604813767373" />
+    <state width="1544" height="198" key="GridCell.Tab.0.right" timestamp="1604813767373">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state width="1544" height="198" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1604567920849" />
+    <state width="1544" height="198" key="GridCell.Tab.0.right/0.0.1600.852@0.0.1600.852" timestamp="1604813767373" />
     <state width="263" height="571" key="HiddenNamespacesPopup" timestamp="1603855262835">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state width="263" height="571" key="HiddenNamespacesPopup/0.0.1600.852@0.0.1600.852" timestamp="1603855262835" />
-    <state x="151" y="63" key="MergeDialog" timestamp="1604423554497">
+    <state x="151" y="63" key="MergeDialog" timestamp="1604568418291">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="151" y="63" key="MergeDialog/0.0.1600.852@0.0.1600.852" timestamp="1604423554497" />
+    <state x="151" y="63" key="MergeDialog/0.0.1600.852@0.0.1600.852" timestamp="1604568418291" />
     <state x="460" y="88" key="NewPhpClassDialog" timestamp="1602473976882">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="460" y="88" key="NewPhpClassDialog/0.0.1600.852@0.0.1600.852" timestamp="1602473976882" />
-    <state x="589" y="328" key="NewPhpFileDialog" timestamp="1604466974511">
+    <state x="589" y="328" key="NewPhpFileDialog" timestamp="1604568147554">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="589" y="328" key="NewPhpFileDialog/0.0.1600.852@0.0.1600.852" timestamp="1604466974511" />
-    <state x="183" y="0" key="SettingsEditor" timestamp="1604568112343">
+    <state x="589" y="328" key="NewPhpFileDialog/0.0.1600.852@0.0.1600.852" timestamp="1604568147554" />
+    <state x="183" y="0" key="SettingsEditor" timestamp="1604989410706">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="183" y="0" key="SettingsEditor/0.0.1600.852@0.0.1600.852" timestamp="1604568112343" />
+    <state x="183" y="0" key="SettingsEditor/0.0.1600.852@0.0.1600.852" timestamp="1604989410706" />
     <state width="623" height="498" key="SwitcherDM" timestamp="1601383844189">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state width="623" height="498" key="SwitcherDM/0.0.1600.852@0.0.1600.852" timestamp="1601383844189" />
-    <state x="291" y="91" key="Vcs.Push.Dialog.v2" timestamp="1604557293673">
+    <state x="291" y="91" key="Vcs.Push.Dialog.v2" timestamp="1605069194349">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="291" y="91" key="Vcs.Push.Dialog.v2/0.0.1600.852@0.0.1600.852" timestamp="1604557293673" />
+    <state x="291" y="91" key="Vcs.Push.Dialog.v2/0.0.1600.852@0.0.1600.852" timestamp="1605069194349" />
     <state x="613" y="253" width="392" height="345" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603869102126">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
@@ -322,10 +410,14 @@
       <screen x="0" y="0" width="1600" height="852" />
     </state>
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1600.852@0.0.1600.852" timestamp="1603784981556" />
-    <state x="371" y="182" key="run.anything.popup" timestamp="1603957078760">
+    <state x="66" y="0" key="new project wizard" timestamp="1604723543294">
       <screen x="0" y="0" width="1600" height="852" />
     </state>
-    <state x="371" y="182" key="run.anything.popup/0.0.1600.852@0.0.1600.852" timestamp="1603957078760" />
+    <state x="66" y="0" key="new project wizard/0.0.1600.852@0.0.1600.852" timestamp="1604723543294" />
+    <state x="371" y="182" key="run.anything.popup" timestamp="1605073324571">
+      <screen x="0" y="0" width="1600" height="852" />
+    </state>
+    <state x="371" y="182" key="run.anything.popup/0.0.1600.852@0.0.1600.852" timestamp="1605073324571" />
     <state x="379" y="-1" width="840" height="1034" key="search.everywhere.popup" timestamp="1604462634803">
       <screen x="0" y="0" width="1600" height="852" />
     </state>

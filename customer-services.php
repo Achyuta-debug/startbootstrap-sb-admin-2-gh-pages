@@ -1,6 +1,8 @@
 <?php
 session_start();
 include "function.php";
+$name=name();
+$_SESSION['room']=$_SESSION['roomno'];
     if (isset($_POST['submit'])) {
         $roomno=$_SESSION['roomno'];
         $cid=custid($roomno);
@@ -14,8 +16,25 @@ include "function.php";
             if (!$result) {
                 die("Query failed" . mysqli_connect_error());
             }
+            header("Location:/startbootstrap-sb-admin-2-gh-pages/Employee.php");
         }
     }
+if (isset($_POST['submit2'])) {
+    $roomno=$_SESSION['roomno'];
+    $cid=custid($roomno);
+    $values = $_POST['serv'];
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $checkbox = $_POST['serv'];
+    for ($i = 0; $i < count($checkbox); $i++) {
+        $check_id = $checkbox[$i];
+        $query = "DELETE FROM uses WHERE customer_id = '$cid' && service_id= '$check_id' ";
+        $result = mysqli_query($connect, $query);
+        if (!$result) {
+            echo "Please add a service first";
+        }
+        header("Location:/startbootstrap-sb-admin-2-gh-pages/Employee.php");
+    }
+}
 
 ?>
 
@@ -89,10 +108,8 @@ include "function.php";
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="utilities-color.html">View all</a>
-                    <a class="collapse-item" href="utilities-color.html">Delete</a>
-                    <a class="collapse-item" href="utilities-color.html">Update</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
+                    <a class="collapse-item" href="utilities-color.html">Update information</a>
                 </div>
             </div>
         </li>
@@ -133,7 +150,7 @@ include "function.php";
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Achyuta</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php  echo $name?></span>
                             <!--                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                         </a>
                         <!-- Dropdown - User Information -->
@@ -203,10 +220,12 @@ include "function.php";
                                     </tbody>
                                 </table>
                         </div>
-                        <div class="text-center">
-                            <input type="submit" value="Add" name="submit" class="btn btn-primary">
-                            </form>
-                        </div>
+                            <div class="bg-light clearfix">
+                                <input type="submit" name="submit" value="Add" class="btn btn-primary float-left mt-4">
+                                <input type="submit" name="submit2" value="Delete" class="btn btn-danger float-right mt-4">
+
+                            </div>
+
                     </div>
                 </div>
 
@@ -223,7 +242,7 @@ include "function.php";
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
+                    <span>Delights &copy; 1995-2020</span>
                 </div>
             </div>
         </footer>
