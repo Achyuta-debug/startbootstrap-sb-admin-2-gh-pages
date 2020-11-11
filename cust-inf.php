@@ -1,5 +1,12 @@
 <?php
+session_start();
 include "function.php";
+$no=returnroomno();
+$id=custid($no);
+$_SESSION['id']=$id;
+$_SESSION['room']=$no;
+$name=name();
+
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -125,7 +132,7 @@ include "function.php";
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Achyuta</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name ?></span>
                                 <!--                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                             </a>
                             <!-- Dropdown - User Information -->
@@ -238,26 +245,96 @@ include "function.php";
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
 
                         <!-- Content Column -->
                         <div class="col-lg-12 mb-4">
-
                             <div class="col-lg-12 mb-8">
-
-                                <div class="card shadow mb-8">
-                                    <div class="card-header py-8">
+                                <div class="card shadow mb-4">
+                                    <div class="card-header py-3">
                                         <h4 class="m-0 font-weight-bold text-primary">Add Services</h4>
                                     </div>
+                                <div class="card-body">
+                                        <div class="table-responsive">
+<!--                                            <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">-->
+<!--                                                <thead class="bg-primary">-->
+<!--                                                <tr class="text-white">-->
+<!--                                                    <th>Service-Id</th>-->
+<!--                                                    <th>Service-name</th>-->
+<!--                                                    <th>Count</th>-->
+<!--                                                    <th>Price</th>-->
+<!--                                                </tr>-->
+<!--                                                </thead>-->
+<!--                                                <tfoot>-->
+<!--                                                <tbody>-->
+                                                <?php
+                                                $connection = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+                                                $query="select customer_id,services.service_id,service_name,COUNT(*) AS count,services.price from uses inner join services on 
+                                                services.service_id = uses.service_id where
+                                                customer_id ='$id' group by uses.service_id; ";
+                                                $result=$connection->query($query);
+                                                if(!$result){
+                                                    die("query failed".mysqli_connect_error());
+                                                }
+                                                if($result->num_rows>0){
+                                                    echo"<table class='table table-bordered' id='dataTable' width='100%' cellspacing='0'>
+                                                <thead class='bg-primary'>
+                                                <tr class='text-white'>
+                                                    <th>Service-Id</th>
+                                                    <th>Service-name</th>
+                                                    <th>Count</th>
+                                                    <th>Price</th>
+                                                </tr>
+                                                </thead>
+                                                <tfoot>
+                                                <tbody>";
+                                                    while($row=$result->fetch_assoc()){
+                                                        $serviceid=$row['service_id'];$servicename=$row['service_name']; $count=$row['count'];
+                                                        $price=$row['price'];
+                                                        echo "<tr><td>".$serviceid."</td><td>".$servicename."</td><td>".
+                                                            $count."</td><td>".$price.
+                                                            "</td></tr>  
+                                           ";
+                                                    }
+                                                }
+                                                else{
+                                                    echo "No entries found";
+                                                }
+                                                ?>
+                                            </tbody>
+                                            </table>
+
+                                        </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
+                </div>
 
 
                     <!-- /.container-fluid -->
-
                 </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12 ">
+                            <div class="text-center">
+                                <form action="invoice.php" method="post">
+                                <input type="submit" value="Checkout"
+                                       name="submit" class="btn btn-danger col-sm-5 btn-user ">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                       <div class="form row">
+                        <div class="form-group col-md-12 ">
+                            <div class="text-right">
+                                    <form action="invoice.php" method="post">
+                                        <input type="submit" value="Print Bill"
+                                               name="submit-2" class="btn btn-primary col-sm-1 btn-user ">
+                                    </form>
+                                </div>
+                       </div>
+                       </div>
+                    </div>
             </div>
                 <!-- End of Main Content -->
 
@@ -321,5 +398,4 @@ include "function.php";
     </body>
     </html>
 
-<?php
 

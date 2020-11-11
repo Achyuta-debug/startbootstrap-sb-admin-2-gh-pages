@@ -1,9 +1,12 @@
 <?php
 include "function.php";
+require ('fpdf/fpdf.php');
 session_start();
 $nam=name();
 $empid=$_SESSION['user'];
 $custid="DELCUS".generatekey();
+
+
 if (isset($_POST['submit-emp'])){
     $connect = mysqli_connect('localhost','root','Achyuta123','hotel');
     $firstname= stripslashes($_POST['firstname']);
@@ -24,12 +27,12 @@ if (isset($_POST['submit-emp'])){
     $email = stripslashes($_POST['email']);
     $query= "INSERT INTO customers(customer_id,fname,lname,address,city,sex,id_proof,age,phone_no,room_no,room_type,
                      no_of_childrens,no_of_adults,from_date,to_date,payment_method,email,emp_id)
-             VALUES('$custid','$firstname','$lastname','$address','$city','$sex',
+              VALUES('$custid','$firstname','$lastname','$address','$city','$sex',
                     '$aadhaar',$age,'$phoneno','$roomno','$roomtype','$noofad',
                     '$noofch','$from','$todate','$payment','$email','$empid')";
     $res=mysqli_query($connect,$query);
     if(!$res){
-        die("query failed". mysqli_error($connect));
+        die("query failed". mysqli_connect_error());
     }
 }
 ?>
@@ -95,7 +98,7 @@ if (isset($_POST['submit-emp'])){
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="Add-serv.php">Add bills</a>
+                    <a class="collapse-item" href="Add-serv.php">View all</a>
                     <a class="collapse-item" href="utilities-color.html">Delete</a>
                     <a class="collapse-item" href="utilities-color.html">Update</a>
                     <a class="collapse-item" href="utilities-border.html">View bills</a>

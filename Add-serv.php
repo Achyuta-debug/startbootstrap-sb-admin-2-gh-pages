@@ -153,7 +153,7 @@ if(isset($_POST['roomno'])){
                         <h4 class="m-0 font-weight-bold text-primary">Add Services</h4>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="customer-services.php">
+                        <form method="post" action="Add-serv.php">
                             <div class="table-responsive">
                                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                                     <thead class="bg-primary">
@@ -184,19 +184,12 @@ if(isset($_POST['roomno'])){
                                                         <input type='submit' name='roomno' value='$roomno' class='btn btn-primary'> </td>";
                                         }
                                     }
-                                    else{
-                                        echo "no entries found";
-                                    }
                                     ?>
 
 
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="text-center">
-                                <input type="submit" value="Add" name="submit" class="btn btn-primary">
-                        </form>
-                    </div>
                 </div>
             </div>
 

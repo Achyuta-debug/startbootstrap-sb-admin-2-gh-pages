@@ -161,9 +161,7 @@ $nam=name();
     <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
+
 
 </ul>
 <!-- End of Sidebar -->
@@ -186,8 +184,6 @@ $nam=name();
             <!-- Topbar Navbar -->
             <ul class="navbar-nav ml-auto">
 
-
-                <div class="topbar-divider d-none d-sm-block"></div>
 
                 <!-- Nav Item - User Information -->
                 <li class="nav-item dropdown no-arrow">
@@ -221,14 +217,14 @@ $nam=name();
             <div class="row">
 
                 <div class="col-lg-12 mb-8">
-
+                    <form action="Employee.php" method="post">
                     <div class="card shadow mb-8">
                         <div class="card-header py-8">
                             <h4 class="m-0 font-weight-bold text-primary">Register Customer</h4>
                         </div>
                         <div class="card-body">
                             <div class="text-primary">
-                                <form action="Employee.php" method="post">
+<!--                                <form action="Employee.php" method="post">-->
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="inputEmail4">Firstname:</label>
@@ -275,8 +271,8 @@ $nam=name();
                                         </div>
 
                                         <div class="form-group col-md-6">
-                                            <label for="id-proof">Aadhaar-no</label>
-                                            <input type="tel" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control"  name="aadhaar"  required >
+                                            <label for="tel">Aadhaar-no</label>
+                                            <input type="tel" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control" id="tel"  name="aadhaar"  required >
                                         </div>
 
                                         <div class="form-group col-md-6">
@@ -285,8 +281,8 @@ $nam=name();
                                         </div>
 
                                         <div class="form-group col-md-6">
-                                            <label for="phone-no">Phone-no</label>
-                                            <input type="tel" pattern="[0-9]{10}" class="form-control" name="phoneno" required>
+                                            <label for="phone">Phone-no</label>
+                                            <input type="tel"  id="phone" pattern="[0-9]{10}" class="form-control" name="phoneno" required >
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Room-no">Room-no</label>
@@ -339,7 +335,6 @@ $nam=name();
                                               name="submit-emp" class="btn btn-primary col-sm-3 btn-user ">
                                     </div>
                                 </div>
-                                </form>
 
                             </div>
                         </div>
@@ -347,6 +342,7 @@ $nam=name();
                         <!--                             Approach -->
 
                     </div>
+                    </form>
                 </div>
 
             </div>
@@ -411,28 +407,6 @@ $nam=name();
 <script src="vendor/chart.js/Chart.min.js"></script>
 
 <!-- Page level custom scripts -->
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-<script>
-    $('[data-toggle=datepicker]').each(function() {
-        var target = $(this).data('sample-date');
-        var t = $('input[name=' + target + ']');
-        t.datepicker({
-            dateFormat: 'yy-mm-dd',
-        });
-        $(this).on("click", function() {
-            t.datepicker("show");
-        });
-    });
-
-</script>
 </body>
 </html>
 

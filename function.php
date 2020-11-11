@@ -4,7 +4,7 @@
  $connect = mysqli_connect('localhost','root','Achyuta123');
 }
 
-function name( ){
+function name(){
     $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
     $id = $_SESSION['user'];
     $query = "SELECT fname FROM employees WHERE emp_id = '{$id}'";
@@ -66,6 +66,16 @@ function custid($roomno){
      $id=$row['customer_id'];
      return $id;
 }
+
+function days($from_date,$to_date){
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $query = "SELECT DATEDIFF('$to_date','$from_date') AS DateDiff FROM customers";
+    $result = mysqli_query($connect,$query);
+    $row = mysqli_fetch_array($result);
+    $date = $row['DateDiff'];
+    return $date;
+}
+
 
 function returnroomno()
 {
@@ -142,5 +152,18 @@ function returnroomno()
     }
 
 }
+function returnprice($roomno){
+    if($roomno >=101 && $roomno <= 108){
+        $price=5000;
+    }
+    else if($roomno >=201 && $roomno <= 208){
+       $price =10000;
+    }
+    else{
+        $price = 15000;
+    }
+    return $price;
+}
+
 
 ?>
