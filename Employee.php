@@ -6,7 +6,6 @@ $nam=name();
 $empid=$_SESSION['user'];
 $custid="DELCUS".generatekey();
 
-
 if (isset($_POST['submit-emp'])){
     $connect = mysqli_connect('localhost','root','Achyuta123','hotel');
     $firstname= stripslashes($_POST['firstname']);
@@ -34,6 +33,15 @@ if (isset($_POST['submit-emp'])){
     if(!$res){
         die("query failed". mysqli_connect_error());
     }
+    $query2= "INSERT INTO customers_logs(customer_id,fname,lname,address,city,sex,id_proof,age,phone_no,room_no,room_type,
+                         no_of_childrens,no_of_adults,from_date,to_date,payment_method,email,emp_id)
+                  VALUES('$custid','$firstname','$lastname','$address','$city','$sex',
+                        '$aadhaar',$age,'$phoneno','$roomno','$roomtype','$noofad',
+                        '$noofch','$from','$todate','$payment','$email','$empid')";
+    $res2=mysqli_query($connect,$query2);
+        if(!$res2){
+            die("query failed". mysqli_connect_error());
+        }
 }
 ?>
 <!DOCTYPE html>

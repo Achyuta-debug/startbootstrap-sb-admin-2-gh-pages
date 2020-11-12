@@ -18,6 +18,7 @@ $_SESSION['room']=$_SESSION['roomno'];
             }
             header("Location:/startbootstrap-sb-admin-2-gh-pages/Employee.php");
         }
+
     }
 if (isset($_POST['submit2'])) {
     $roomno=$_SESSION['roomno'];

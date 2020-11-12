@@ -6,7 +6,8 @@ $id=custid($no);
 $_SESSION['id']=$id;
 $_SESSION['room']=$no;
 $name=name();
-
+$billid = "DELBILL" . generatekey();
+$_SESSION['billid'] = $billid;
 ?>
     <!DOCTYPE html>
     <html lang="en">

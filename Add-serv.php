@@ -6,6 +6,7 @@ if(isset($_POST['roomno'])){
     $_SESSION['roomno']=$_POST['roomno'];
     header("Location:/startbootstrap-sb-admin-2-gh-pages/customer-services.php");
 }
+
 ?>
 
 
@@ -181,7 +182,8 @@ if(isset($_POST['roomno'])){
                                             echo "<tr><td>".$name."</td><td>".$cus_id."</td><td>".
                                                 $roomtype."</td><td>".$todate.
                                                 "</td><td>
-                                                        <input type='submit' name='roomno' value='$roomno' class='btn btn-primary'> </td>";
+                                                        <input type='submit' name='roomno' value='$roomno' class='btn btn-outline-success'></td>
+                                                        ";
                                         }
                                     }
                                     ?>
