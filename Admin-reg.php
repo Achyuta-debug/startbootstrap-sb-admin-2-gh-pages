@@ -10,7 +10,7 @@ $nam= name();
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"> 
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -177,7 +177,6 @@ $nam= name();
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-
                 <div class="row">
 
                     <div class="col-lg-12 mb-8">
@@ -187,69 +186,76 @@ $nam= name();
                                 <h4 class="m-0 font-weight-bold text-primary">Register Employee</h4>
                             </div>
                             <div class="card-body">
-                                <div class="text-center">
-
-                                    <form class="user">
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="text" class="form-control "
-                                                       id="exampleFirstName" placeholder="First Name">
+                                <div class="text-primary">
+                                    <form action="index.php" method="post">
+                                        <div class="form-row">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputEmail4">Firstname</label>
+                                                <input type="text" class="form-control" id="inputEmail4" name="firstname" required>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <input type="text" class="form-control "
-                                                       id="exampleLastName" placeholder="Last Name">
+                                            <div class="form-group col-md-6">
+                                                <label for="lastname">Lastname</label>
+                                                <input type="text" class="form-control" id="lastname" name="lastname" required>
                                             </div>
-                                        </div>
-                                        <div class="form-group ">
-                                            <input type="email" class="form-control "
-                                                   id="exampleInputEmail" placeholder="Email Address">
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-6 mb-3 mb-sm-0">
-                                                <input type="password" class="form-control "
-                                                       id="exampleInputPassword" placeholder="Password">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <input type="password" class="form-control "
-                                                       id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputPassword4">Email</label>
+                                                <input type="text" class="form-control" id="inputPassword4" name="email" required>
                                             </div>
 
-                                            <div class="col-sm-12 mt-3">
-                                                <input type="text" class="form-control "
-                                                       id="exampleRepeatPassword" placeholder="Address">
+                                            <div class="form-group col-md-6">
+                                                <label for="inputAddress">Address</label>
+                                                <input type="text" class="form-control" id="inputAddress"
+                                                       placeholder="1234 Main St" name ="address" required>
                                             </div>
-
-                                            <div class="col-sm-6 mt-3">
-                                                <input type="number" class="form-control "
-                                                       id="exampleRepeatPassword" placeholder="Phone">
-                                            </div>
-
-                                            <div class="col-sm-6 mt-3">
-                                                <input type="number" class="form-control "
-                                                       id="exampleRepeatPassword" placeholder="age">
-                                            </div>
-
-
-                                            <div class="col-sm-6 mt-3">
-<!--                                                <label class="" for="inlineFormCustomSelect">Sex</label>-->
-                                                <select class="form-control border-bottom-primary " >
-<!--                                                    <option selected>Male</option>-->
-                                                    <option value="1">Male</option>
-                                                    <option value="2">Female</option>
-                                                    <option value="3">Others</option>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label for="inputState">Sex</label>
+                                                <select id="inputState" class="form-control" name="sex">
+                                                    <option selected>Male</option>
+                                                    <option>Female</option>
+                                                    <option>Others</option>
                                                 </select>
                                             </div>
-
-                                            <div class="col-sm-6 mt-3">
-                                                <input type="number" class="form-control "
-                                                       id="exampleRepeatPassword" placeholder="Aadhar-no">
+                                            <div class="form-group col-md-6">
+                                                <label for="id-proof">Aadhaar No</label>
+                                                <input type="tel" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control"  name="aadhaar"  required >
                                             </div>
 
+                                            <div class="form-group col-md-6">
+                                                <label for="Age">Age</label>
+                                                <input type="number" class="form-control" id="Age" max="100" name="age" required>
+                                            </div>
+
+                                            <div class="form-group col-md-6">
+                                                <label for="phone-no">Phone-no</label>
+                                                <input type="tel" pattern="[0-9]{10}" class="form-control" name="phoneno" required>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputposition">Position</label>
+                                                <select id="inputposition" class="form-control" name="position">
+                                                    <option selected>owner</option>
+                                                    <option>loner</option>
+                                                    <option>boner</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="inputsalary">Salary</label>
+                                                <input type="number" class="form-control" id="inputsalary" name="salary" required>
+                                            </div>
+
+
                                         </div>
+                                </div>
 
-                                        <input type="submit" value="Register" class="btn btn-primary col-sm-3   btn-user ">
-
+                                <div class="form-row">
+                                    <div class="form-group col-md-12 ">
+                                        <div class="text-center">
+                                            <input type="submit" value="Register"
+                                                   name="submit-emp" class="btn btn-primary col-sm-3 btn-user ">
+                                        </div>
+                                    </div>
                                     </form>
+
                                 </div>
                             </div>
 

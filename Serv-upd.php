@@ -2,6 +2,10 @@
 session_start();
 include "function.php";
 $name=name();
+if(isset($_POST['roomno'])){
+    $_SESSION['roomno']=$_POST['roomno'];
+    header("Location:/startbootstrap-sb-admin-2-gh-pages/customer-services.php");
+}
 
 ?>
 
@@ -41,7 +45,6 @@ $name=name();
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Admin-reg.php">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
@@ -54,29 +57,54 @@ $name=name();
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="Employee.php">
-                <i class="fas fa-fw fa-hotel"></i>
-                <span>View rooms</span></a>
+            <a class="nav-link" href="index.php">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Nav Item - Pages Collapse Menu -->
-
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Employee</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <!--            <h6 class="collapse-header">Custom Components:</h6>-->
+                    <a class="collapse-item" href="Admin-reg.php">Register</a>
+                    <a class="collapse-item" href="tables.html">Update</a>
+                    <a class="collapse-item" href="tables.html">Delete</a>
+                    <a class="collapse-item" href="tables.html">View</a>
+                    <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Services</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="404.html">Add</a>
+                    <a class="collapse-item" href="blank.html">Delete/Update</a>
+                </div>
+            </div>
+        </li>
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-user-friends"></i>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-wrench"></i>
                 <span>Customer</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
-                    <a class="collapse-item" href="update-cus.php">Update information</a>
+                    <a class="collapse-item" href="utilities-color.html">View</a>
+                    <a class="collapse-item" href="utilities-border.html">View bills</a>
                 </div>
             </div>
         </li>
@@ -117,7 +145,7 @@ $name=name();
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name?></span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name ?></span>
                             <!--                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                         </a>
                         <!-- Dropdown - User Information -->
@@ -154,12 +182,11 @@ $name=name();
                                 <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
                                     <thead class="bg-primary">
                                     <tr class="text-white">
-                                        <th>Name</th>
-                                        <th>Customer-id</th>
-                                        <th>Room-type</th>
-                                        <th>Check-out date</th>
-                                        <th>Room no</th>
-                                        <th>Action</th>
+                                        <th>Service-id</th>
+                                        <th>Service-name</th>
+                                        <th>Price</th>
+                                        <th>Update</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
@@ -169,19 +196,18 @@ $name=name();
                                     if(!$connection){
                                         die("query failed".mysqli_connect_error());
                                     }
-                                    $query="SELECT fname,customer_id,room_no,room_type,to_date FROM customers ";
+                                    $query="SELECT * FROM services ";
                                     $result=$connection->query($query);
                                     if($result->num_rows>0){
                                         while($row=$result->fetch_assoc()){
-                                            $name=$row['fname'];$cus_id=$row['customer_id']; $roomno=$row['room_no'];
-                                            $todate=$row['to_date']; $roomtype=$row['room_type'];
-                                            echo "<tr><td>".$name."</td><td>".$cus_id."</td><td>".
-                                                $roomtype."</td><td>".$todate.
-                                                "</td><td>".$roomno."</td><td><a href='update-cus2.php? ron=$roomno'>
-                                                 <button class='btn btn-primary'>Update</button></a></td>";
-
-
-
+                                            $sid=$row['service_id'];$sname=$row['service_name']; $price=$row['price'];
+                                            echo "<tr><td>".$sid."</td><td>".$sname."</td><td>".
+                                                $price.
+                                                "</td><td>
+                                                   <a href='serv-upd2.php?sid=$sid& sname=$sname &sprice=$price'>
+                                                 <button class='btn btn-outline-success'>Update</button></a></td><td>".
+                                                  "<a href='Serv-upd2.php?sid=$sid & sname=$sname &sprice=$price'>
+                                                 <button class='btn btn-outline-danger'>Delete</button></a></td><td>";
                                         }
                                     }
                                     ?>
@@ -263,3 +289,4 @@ $name=name();
 </body>
 
 </html>
+

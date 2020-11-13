@@ -1,88 +1,22 @@
 <?php
 include "function.php";
 session_start();
-global $room;
-if (isset($_POST['101'])) {
-    $room = $_POST['101'];
-} elseif (isset($_POST['102'])) {
-    $room = $_POST['102'];
+$connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+$empid = $_SESSION['user'];
+
+$room=$_GET['ron'];
+$name=name();
+$custid = custid($room);
+if ($room >= 101 && $room <= 108) {
+    $type = "Standard";
 }
-elseif (isset($_POST['103'])) {
-    $room = $_POST['103'];
-}
-elseif (isset($_POST['104'])) {
-    $room = $_POST['104'];
-}
-elseif (isset($_POST['105'])) {
-    $room = $_POST['105'];
-}
-elseif (isset($_POST['106'])) {
-    $room = $_POST['106'];
-}
-elseif (isset($_POST['107'])) {
-    $room = $_POST['107'];
-}
-elseif (isset($_POST['108'])) {
-    $room = $_POST['108'];
-}
-elseif (isset($_POST['201'])) {
-    $room = $_POST['201'];
-}
-elseif (isset($_POST['202'])) {
-    $room = $_POST['202'];
-}
-elseif (isset($_POST['203'])) {
-    $room = $_POST['203'];
-}
-elseif (isset($_POST['204'])) {
-    $room = $_POST['204'];
-}
-elseif (isset($_POST['205'])) {
-    $room = $_POST['205'];
-}
-elseif (isset($_POST['206'])) {
-    $room = $_POST['206'];
-}
-elseif (isset($_POST['207'])) {
-    $room = $_POST['207'];
-}
-elseif (isset($_POST['208'])) {
-    $room = $_POST['208'];
-}
-elseif (isset($_POST['301'])) {
-    $room = $_POST['301'];
-}
-elseif (isset($_POST['302'])) {
-    $room = $_POST['302'];
-}
-elseif (isset($_POST['303'])) {
-    $room = $_POST['303'];
-}
-elseif (isset($_POST['304'])) {
-    $room = $_POST['304'];
-}
-elseif (isset($_POST['305'])) {
-    $room = $_POST['305'];
-}
-elseif (isset($_POST['306'])) {
-    $room = $_POST['306'];
-}
-elseif (isset($_POST['307'])) {
-    $room = $_POST['307'];
-}
-elseif (isset($_POST['308'])) {
-    $room = $_POST['302'];
-}
-if($room>=101&&$room<=108){
-    $type="Standard";
-}
-if($room>=201&&$room<=208) {
+if ($room >= 201 && $room <= 208) {
     $type = "Deluxe";
 }
-if($room>=301&&$room<=308) {
+if ($room >= 301 && $room <= 308) {
     $type = "Super-Deluxe";
 }
-$nam=name();
+$info = custinfo($room);
 
 
 ?>
@@ -148,7 +82,7 @@ $nam=name();
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
+                <!--<h6 class="collapse-header">Custom Utilities:</h6>-->
                 <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
                 <a class="collapse-item" href="update-cus.php">Update information</a>
             </div>
@@ -187,7 +121,7 @@ $nam=name();
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $nam ?></span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name ?></span>
                         <!--                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                     </a>
                     <!-- Dropdown - User Information -->
@@ -216,40 +150,41 @@ $nam=name();
 
                 <div class="col-lg-12 mb-8">
                     <form action="Employee.php" method="post">
-                    <div class="card shadow mb-8">
-                        <div class="card-header py-8">
-                            <h4 class="m-0 font-weight-bold text-primary">Register Customer</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="text-primary">
-<!--                                <form action="Employee.php" method="post">-->
+                        <div class="card shadow mb-8">
+                            <div class="card-header py-8">
+                                <h4 class="m-0 font-weight-bold text-primary">Update Customer</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="text-primary">
+                                    <!--                                <form action="Employee.php" method="post">-->
                                     <div class="form-row">
+
                                         <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Firstname:</label>
-                                            <input type="text" class="form-control" id="inputEmail4" name="firstname">
+                                            <label for="fname">Firstname:</label>
+                                            <input type="text" value="<?php echo $info['fname'] ?>" class="form-control"
+                                                   id="fname" name="firstname">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="lastname">Lastname:</label>
-                                            <input type="text" class="form-control" id="lastname" name="lastname">
+                                            <input type="text" value="<?php echo $info['lname'] ?>" class="form-control"
+                                                   id="lastname" name="lastname">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputPassword4">Email</label>
-                                            <input type="text" class="form-control" id="inputPassword4" name="email">
+                                            <input type="text" class="form-control" value="<?php echo $info['email'] ?>"
+                                                   id="inputPassword4" name="email">
                                         </div>
 
                                         <div class="form-group col-md-6">
                                             <label for="inputAddress">Address</label>
                                             <input type="text" class="form-control" id="inputAddress"
-                                                   placeholder="1234 Main St" name ="address">
-                                        </div>
-                                        <div class="form-group col-md-6">
-                                            <label for="inputAddress2">Address 2</label>
-                                            <input type="text" class="form-control" id="inputAddress2"
-                                                   placeholder="Apartment, studio, or floor">
+                                                   placeholder="1234 Main St" value="<?php echo $info['address'] ?>"
+                                                   name="address">
                                         </div>
                                         <div class="form-group col-md-6 ">
                                             <label for="inputCity">City</label>
-                                            <input type="text" class="form-control" id="inputCity" name="city">
+                                            <input type="text" value="<?php echo $info['city'] ?>" class="form-control"
+                                                   id="inputCity" name="city">
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="inputState">Sex</label>
@@ -270,33 +205,37 @@ $nam=name();
 
                                         <div class="form-group col-md-6">
                                             <label for="tel">Aadhaar-no</label>
-                                            <input type="tel" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control" id="tel"  name="aadhaar"  required >
+                                            <input type="tel" value="<?php echo $info['id_proof'] ?>"
+                                                   pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control" id="tel"
+                                                   name="aadhaar" required>
                                         </div>
 
                                         <div class="form-group col-md-6">
                                             <label for="Age">Age</label>
-                                            <input type="number" class="form-control" id="Age" max="100" name="age" required>
+                                            <input type="number" value="<?php echo $info['age'] ?>" class="form-control"
+                                                   id="Age" max="100" name="age" required>
                                         </div>
 
                                         <div class="form-group col-md-6">
                                             <label for="phone">Phone-no</label>
-                                            <input type="tel"  id="phone" pattern="[0-9]{10}" class="form-control" name="phoneno" required >
+                                            <input type="tel" value="<?php echo $info['phone_no'] ?>" id="phone"
+                                                   pattern="[0-9]{10}" class="form-control" name="phoneno" required>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Room-no">Room-no</label>
-                                            <select id="Room-no" class="form-control" name="roomno" required >
+                                            <select id="Room-no" class="form-control" name="roomno" required>
                                                 <option selected><?php echo $room; ?></option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="Room-type">Room-type</label>
-                                            <select id="Room-type" class="form-control" name="roomtype" required >
+                                            <select id="Room-type" class="form-control" name="roomtype" required>
                                                 <option selected><?php echo $type; ?></option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="adults">No Of Adults</label>
-                                            <select id="adults" class="form-control" name = "noofad" required>
+                                            <select id="adults" class="form-control" name="noofad" required>
                                                 <option selected>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -305,7 +244,7 @@ $nam=name();
 
                                         <div class="form-group col-md-6">
                                             <label for="children">No Of Children</label>
-                                            <select id="children" class="form-control" name="noofch" required >
+                                            <select id="children" class="form-control" name="noofch" required>
                                                 <option selected>1</option>
                                                 <option>0</option>
                                                 <option>2</option>
@@ -314,32 +253,36 @@ $nam=name();
 
                                         <div class="form-group col-md-6">
                                             <label for="from">Check-in Date</label>
-                                            <input class="form-control" type="date" value="MM-DD-YYYY" id="from" name="from" required>
+                                            <input class="form-control" type="date"
+                                                   value="<?php echo $info['from_date'] ?>" id="from" name="from"
+                                                   required>
                                         </div>
 
                                         <div class="form-group col-md-6">
                                             <label for="to">Check-out Date</label>
-                                            <input class="form-control" type="date" value="MM-DD-YYYY" id="to" name="todate" required>
+                                            <input class="form-control" type="date"
+                                                   value="<?php echo $info['to_date'] ?>" id="to" name="todate"
+                                                   required>
                                         </div>
 
 
                                     </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-md-12 ">
-                                    <div class="text-center">
-                                        <input type="submit" value="Register"
-                                              name="submit-emp" class="btn btn-primary col-sm-3 btn-user ">
-                                    </div>
                                 </div>
 
+                                <div class="form-row">
+                                    <div class="form-group col-md-12 ">
+                                        <div class="text-center">
+                                            <input type="submit" value="Update"
+                                                   name="update-emp" class="btn btn-primary col-sm-3 btn-user ">
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
+
+                            <!--                             Approach -->
+
                         </div>
-
-                        <!--                             Approach -->
-
-                    </div>
                     </form>
                 </div>
 
@@ -407,4 +350,4 @@ $nam=name();
 <!-- Page level custom scripts -->
 </body>
 </html>
-
+<!---->

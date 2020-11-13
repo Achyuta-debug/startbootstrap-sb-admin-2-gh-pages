@@ -4,7 +4,7 @@ require ('fpdf/fpdf.php');
 session_start();
 $nam=name();
 $empid=$_SESSION['user'];
-$custid="DELCUS".generatekey();
+$custid=generatecid();
 
 if (isset($_POST['submit-emp'])){
     $connect = mysqli_connect('localhost','root','Achyuta123','hotel');
@@ -27,11 +27,11 @@ if (isset($_POST['submit-emp'])){
     $query= "INSERT INTO customers(customer_id,fname,lname,address,city,sex,id_proof,age,phone_no,room_no,room_type,
                      no_of_childrens,no_of_adults,from_date,to_date,payment_method,email,emp_id)
               VALUES('$custid','$firstname','$lastname','$address','$city','$sex',
-                    '$aadhaar',$age,'$phoneno','$roomno','$roomtype','$noofad',
-                    '$noofch','$from','$todate','$payment','$email','$empid')";
+                    '$aadhaar', $age,'$phoneno','$roomno','$roomtype',$noofch,$noofad,
+                    '$from','$todate','$payment','$email','$empid')";
     $res=mysqli_query($connect,$query);
     if(!$res){
-        die("query failed". mysqli_connect_error());
+        die("query failed". mysqli_error($connect));
     }
     $query2= "INSERT INTO customers_logs(customer_id,fname,lname,address,city,sex,id_proof,age,phone_no,room_no,room_type,
                          no_of_childrens,no_of_adults,from_date,to_date,payment_method,email,emp_id)
@@ -40,8 +40,48 @@ if (isset($_POST['submit-emp'])){
                         '$noofch','$from','$todate','$payment','$email','$empid')";
     $res2=mysqli_query($connect,$query2);
         if(!$res2){
-            die("query failed". mysqli_connect_error());
+            die("query failed". mysqli_error($connect));
         }
+}
+
+if (isset($_POST['update-emp'])) {
+    $connect = mysqli_connect('localhost','root','Achyuta123','hotel');
+    $firstname = stripslashes($_POST['firstname']);
+    $lastname = stripslashes($_POST['lastname']);
+    $address = stripslashes($_POST['address']);
+    $city = stripslashes($_POST['city']);
+    $sex = stripslashes($_POST['sex']);
+    $aadhaar = stripslashes($_POST['aadhaar']);
+    $age = stripslashes($_POST['age']);
+    $phoneno = stripslashes($_POST['phoneno']);
+    $roomno = stripslashes($_POST['roomno']);
+    $custoid = custid($roomno);
+    $roomtype = stripslashes($_POST['roomtype']);
+    $noofad = stripslashes($_POST['noofad']);
+    $noofch = stripslashes($_POST['noofch']);
+    $from = stripslashes($_POST['from']);
+    $todate = stripslashes($_POST['todate']);
+    $payment = stripslashes($_POST['payment']);
+    $email = stripslashes($_POST['email']);
+    $query1 = "UPDATE customers SET fname = '$firstname',
+            lname = '$lastname',address = '$address',city = '$city',sex = '$sex',id_proof = '$aadhaar',
+            age = $age,phone_no = $phoneno,room_no = $roomno,room_type = '$roomtype',
+            no_of_childrens = $noofch,no_of_adults = $noofad,from_date = '$from',
+            to_date = '$todate',payment_method = '$payment',email = '$email',emp_id = '$empid'
+            WHERE customer_id = '$custoid'";
+    $query2 = "UPDATE customers_logs SET fname = '$firstname',
+               lname = '$lastname',address = '$address',city = '$city',sex = '$sex',id_proof = '$aadhaar',
+               age = $age,phone_no = $phoneno,room_no = $roomno,room_type = '$roomtype',
+               no_of_childrens = $noofch,no_of_adults = $noofad,from_date = '$from',
+               to_date = '$todate',payment_method = '$payment',email = '$email',emp_id = '$empid'
+               WHERE customer_id = '$custoid'";
+
+    $res1 = mysqli_query($connect, $query1);
+    $res2 = mysqli_query($connect, $query2);
+    if (!$res1||!$res2) {
+        die("query failed" . mysqli_error($connect));
+    }
+
 }
 ?>
 <!DOCTYPE html>
@@ -107,7 +147,7 @@ if (isset($_POST['submit-emp'])){
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
                     <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
-                    <a class="collapse-item" href="utilities-color.html">Update information</a>
+                    <a class="collapse-item" href="update-cus.php">Update information</a>
 
                 </div>
             </div>

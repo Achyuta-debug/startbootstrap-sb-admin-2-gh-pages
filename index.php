@@ -1,19 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
 session_start();
 include "function.php";
 $nam=name();
+$empid=$_SESSION['user'];
+if (isset($_POST['submit-emp'])){
+    $connect = mysqli_connect('localhost','root','Achyuta123','hotel');
+    $empid=generatempid();
+    $firstname= stripslashes($_POST['firstname']);
+    $lastname=stripslashes($_POST['lastname']);
+    $address=stripslashes($_POST['address']);
+    $sex=stripslashes($_POST['sex']);
+    $aadhaar=stripslashes($_POST['aadhaar']);
+    $age=stripslashes($_POST['age']);
+    $phoneno=stripslashes($_POST['phoneno']);
+    $password=generatekey();
+    $position=stripslashes($_POST['position']);
+    $salary=stripslashes($_POST['salary']);
+    $email = stripslashes($_POST['email']);
+    $query= "INSERT INTO employees(emp_id,fname,lname,address,sex,id_proof,age,phone_no,password,position,salary,email)
+             VALUES('$empid','$firstname','$lastname','$address','$sex',
+                  '$aadhaar',$age,'$phoneno','$password','$position','$salary','$email')";
+    $res=mysqli_query($connect,$query);
+    if(!$res){
+        die("query failed". mysqli_error($connect));
+    }
+}
+if(isset($_POST['Update-ser'])){
+    $sid=$_POST['sid'];
+    $sname=$_POST['sname'];
+    $sprice=$_POST['sprice'];
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $query = "UPDATE services SET service_name = '$sname', price = $sprice WHERE service_id = '$sid'";
+    $result = mysqli_query($connect, $query);
+    if(!$result){
+        die("query failed".mysqli_error($connect));
+    }
+
+}
+
+
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
 
 <head>
 
+
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Delights-Dashbord</title>
 
     <!-- Custom fonts for this template-->
@@ -71,7 +109,18 @@ $nam=name();
                 </div>
             </div>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Services</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="Add-new.php">Add</a>
+                    <a class="collapse-item" href="Serv-upd.php">Delete/Update</a>
+                </div>
+            </div>
+        </li>
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -212,42 +261,33 @@ $nam=name();
                     </div>
 
                     <!-- Earnings (Monthly) Card Example -->
+                    <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
-                        <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card border-left-secondary shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                                        <div class="row no-gutters align-items-center">
-                                            <div class="col-auto">
-                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="progress progress-sm mr-2">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Customers(total)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">10,000</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        <i class="fas fa-wrench fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <!-- Pending Requests Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Empoyees(Total)</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        <i class="fas fa-cog fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>

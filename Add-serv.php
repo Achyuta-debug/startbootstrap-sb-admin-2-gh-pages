@@ -80,7 +80,7 @@ if(isset($_POST['roomno'])){
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
                     <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
-                    <a class="collapse-item" href="utilities-color.html">Update information</a>
+                    <a class="collapse-item" href="update-cus.php">Update information</a>
                 </div>
             </div>
         </li>

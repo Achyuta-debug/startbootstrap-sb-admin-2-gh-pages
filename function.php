@@ -16,7 +16,7 @@ function name(){
 
 
 function generatekey() {
-     $keylength=5;
+     $keylength=10;
      $str="1234567890abcdefghijklmnopqrstuvwxyz";
      $randstr=substr(str_shuffle($str),0,$keylength);
      return $randstr;
@@ -49,7 +49,7 @@ function custinfo($roomno){
     $query = "SELECT * FROM customers WHERE room_no= $roomno";
     $result=mysqli_query($connect,$query);
     if(!$result){
-        die ("query failed".mysqli_connect_error());
+        die ("query failed".mysqli_error($connect));
     }
     $row=mysqli_fetch_array($result);
     return $row;
@@ -164,6 +164,61 @@ function returnprice($roomno){
     }
     return $price;
 }
-
-
+function generatesid(){
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $query = "SELECT service_id from services order by service_id DESC LIMIT 1";
+    $stmt = $connect->query($query);
+    if(mysqli_num_rows($stmt) > 0) {
+        if ($row = mysqli_fetch_assoc($stmt)) {
+            $value2 = $row['service_id'];
+            $value2 = substr($value2, 6, 13);//separating numeric part
+            $value2 = $value2 + 1;//Incrementing numeric part
+            $value2 = "DELSER" . sprintf('%03s', $value2);//concatenating incremented value
+            $value = $value2;
+        }
+    }
+    else {
+        $value2 = "SERVICE100";
+        $value = $value2;
+    }
+    return $value;
+}
+function generatecid(){
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $query = "SELECT customer_id from customers order by customer_id DESC LIMIT 1";
+    $stmt = $connect->query($query);
+    if(mysqli_num_rows($stmt) > 0) {
+        if ($row = mysqli_fetch_assoc($stmt)) {
+            $value2 = $row['customer_id'];
+            $value2 = substr($value2, 6, 13);//separating numeric part
+            $value2 = $value2 + 1;//Incrementing numeric part
+            $value2 = "DELCUS" . sprintf('%03s', $value2);//concatenating incremented value
+            $value = $value2;
+        }
+    }
+    else {
+        $value2 = "DELCUS100";
+        $value = $value2;
+    }
+    return $value;
+}
+function generatempid(){
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $query = "SELECT emp_id from employees order by employees.emp_id DESC LIMIT 1";
+    $stmt = $connect->query($query);
+    if(mysqli_num_rows($stmt) > 0) {
+        if ($row = mysqli_fetch_assoc($stmt)) {
+            $value2 = $row['emp_id'];
+            $value2 = substr($value2, 6, 13);//separating numeric part
+            $value2 = $value2 + 1;//Incrementing numeric part
+            $value2 = "DELEMP" . sprintf('%03s', $value2);//concatenating incremented value
+            $value = $value2;
+        }
+    }
+    else {
+        $value2 = "DELEMP100";
+        $value = $value2;
+    }
+    return $value;
+}
 ?>
