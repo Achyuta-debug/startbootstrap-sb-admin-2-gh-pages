@@ -2,13 +2,7 @@
 session_start();
 include "function.php";
 $name=name();
-if(isset($_POST['roomno'])){
-    $_SESSION['roomno']=$_POST['roomno'];
-    header("Location:/startbootstrap-sb-admin-2-gh-pages/customer-services.php");
-}
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +39,6 @@ if(isset($_POST['roomno'])){
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Admin-reg.php">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
@@ -58,29 +51,52 @@ if(isset($_POST['roomno'])){
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="Employee.php">
-                <i class="fas fa-fw fa-hotel"></i>
-                <span>View rooms</span></a>
+            <a class="nav-link" href="index.php">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Nav Item - Pages Collapse Menu -->
-
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Employee</span>
+            </a>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <!--            <h6 class="collapse-header">Custom Components:</h6>-->
+                    <a class="collapse-item" href="Admin-reg.php">Register</a>
+                    <a class="collapse-item" href="Adm-view.php">Delete/View</a>
+                    <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Services</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="Add-new.php">Add</a>
+                    <a class="collapse-item" href="Serv-upd.php">Delete/Update</a>
+                </div>
+            </div>
+        </li>
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-user-friends"></i>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-wrench"></i>
                 <span>Customer</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="Add-serv.php">Add/Delete Services</a>
-                    <a class="collapse-item" href="update-cus.php">Update information</a>
+                    <a class="collapse-item" href="Adm-cust-view.php">View</a>
+                    <a class="collapse-item" href="Admin-bill.php">View bills</a>
                 </div>
             </div>
         </li>
@@ -151,71 +167,79 @@ if(isset($_POST['roomno'])){
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h4 class="m-0 font-weight-bold text-primary">Add Services</h4>
+                        <h4 class="m-0 font-weight-bold text-primary">Customers</h4>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="Add-serv.php">
-                            <div class="table-responsive">
-                                <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
-                                    <thead class="bg-primary">
-                                    <tr class="text-white">
-                                        <th>Name</th>
-                                        <th>Customer-id</th>
-                                        <th>Room-type</th>
-                                        <th>Check-out date</th>
-                                        <th>Add</th>
-                                    </tr>
-                                    </thead>
-                                    <tfoot>
-                                    <tbody>
-                                    <?php
-                                    $connection = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
-                                    if(!$connection){
-                                        die("query failed".mysqli_connect_error());
+                        <div class="table-responsive">
+                            <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
+                                <thead class="bg-primary">
+                                <tr class="text-white">
+                                    <th>Customer ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>City</th>
+                                    <th>Phone No</th>
+                                    <th>Room No</th>
+                                    <th>Room Type</th>
+                                    <th>Check In</th>
+                                    <th>Check Out</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tbody>
+                                <?php
+                                $connection = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+                                if(!$connection){
+                                    die("query failed".mysqli_connect_error());
+                                }
+                                $query="SELECT * FROM customers_logs";
+                                $result=$connection->query($query);
+                                if($result->num_rows>0){
+                                    while($row=$result->fetch_assoc()){
+                                        $c_id=$row['customer_id'];
+                                        $cname=$row['fname']." ".$row['lname'];
+                                        $cemail=$row['email'];
+                                        $city = $row['city'];
+                                        $cphone = $row['phone_no'];
+                                        $roomno = $row['room_no'];
+                                        $croomtype = $row['room_type'];
+                                        $checkin = $row['from_date'];
+                                        $checkout = $row['to_date'];
+                                        echo "<tr><td>".$c_id."</td><td>".$cname."</td><td>".
+                                            $cemail."</td><td>".$city."</td><td>".$cphone."</td><td>".$roomno.
+                                            "</td><td>".$croomtype."</td><td>".$checkin."</td><td>".$checkout."</td></tr>";
                                     }
-                                    $query="SELECT fname,customer_id,room_no,room_type,to_date FROM customers ";
-                                    $result=$connection->query($query);
-                                    if($result->num_rows>0){
-                                        while($row=$result->fetch_assoc()){
-                                            $name=$row['fname'];$cus_id=$row['customer_id']; $roomno=$row['room_no'];
-                                            $todate=$row['to_date']; $roomtype=$row['room_type'];
-                                            echo "<tr><td>".$name."</td><td>".$cus_id."</td><td>".
-                                                $roomtype."</td><td>".$todate.
-                                                "</td><td>
-                                                        <input type='submit' name='roomno' value='$roomno' class='btn btn-outline-primary'></td>
-                                                        ";
-                                        }
-                                    }
-                                    ?>
+                                }
+                                ?>
 
 
-                                    </tbody>
-                                </table>
-                            </div>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!--        <div class="alert alert-primary" role="alert">-->
+        <!--            SERVICE Added Successfully.-->
+        <!--        </div>-->
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
                 </div>
             </div>
-
-        </div>
-        <!-- /.container-fluid -->
+        </footer>
+        <!-- End of Footer -->
 
     </div>
-    <!-- End of Main Content -->
-
-    <!--        <div class="alert alert-primary" role="alert">-->
-    <!--            SERVICE Added Successfully.-->
-    <!--        </div>-->
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2020</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
-
-</div>
-<!-- End of Content Wrapper -->
+    <!-- End of Content Wrapper -->
 
 </div>
 <!-- End of Page Wrapper -->
@@ -265,3 +289,5 @@ if(isset($_POST['roomno'])){
 </body>
 
 </html>
+
+

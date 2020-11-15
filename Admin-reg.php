@@ -58,36 +58,42 @@ $nam= name();
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-user-tie"></i>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
                 <span>Employee</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Components:</h6>-->
                     <a class="collapse-item" href="Admin-reg.php">Register</a>
-                    <a class="collapse-item" href="tables.html">Update</a>
-                    <a class="collapse-item" href="tables.html">Delete</a>
-                    <a class="collapse-item" href="tables.html">View</a>
+                    <a class="collapse-item" href="Adm-view.php">Delete/View</a>
                     <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
                 </div>
             </div>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Services</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="Add-new.php">Add</a>
+                    <a class="collapse-item" href="Serv-upd.php">Delete/Update</a>
+                </div>
+            </div>
+        </li>
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-user"></i>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-wrench"></i>
                 <span>Customer</span>
             </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="utilities-color.html">View</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Adm-cust-view.php">View</a>
+                    <a class="collapse-item" href="Admin-bill.php">View bills</a>
                 </div>
             </div>
         </li>
@@ -130,7 +136,7 @@ $nam= name();
                         <!-- Dropdown - Messages -->
                         <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                              aria-labelledby="searchDropdown">
-                            <form class="form-inline mr-auto w-100 navbar-search">
+                            <div class="form-inline mr-auto w-100 navbar-search">
                                 <div class="input-group">
                                     <input type="text" class="form-control bg-light border-0 small"
                                            placeholder="Search for..." aria-label="Search"
@@ -141,7 +147,7 @@ $nam= name();
                                         </button>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </li>
 
@@ -186,8 +192,8 @@ $nam= name();
                                 <h4 class="m-0 font-weight-bold text-primary">Register Employee</h4>
                             </div>
                             <div class="card-body">
+                                <form action="index.php" method="post">
                                 <div class="text-primary">
-                                    <form action="index.php" method="post">
                                         <div class="form-row">
                                             <div class="form-group col-md-6">
                                                 <label for="inputEmail4">Firstname</label>
@@ -218,7 +224,7 @@ $nam= name();
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="id-proof">Aadhaar No</label>
-                                                <input type="tel" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control"  name="aadhaar"  required >
+                                                <input type="tel" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" class="form-control" id="id-proof"  name="aadhaar"  required >
                                             </div>
 
                                             <div class="form-group col-md-6">
@@ -228,14 +234,14 @@ $nam= name();
 
                                             <div class="form-group col-md-6">
                                                 <label for="phone-no">Phone-no</label>
-                                                <input type="tel" pattern="[0-9]{10}" class="form-control" name="phoneno" required>
+                                                <input type="tel" pattern="[0-9]{10}" class="form-control" id="phone-no" name="phoneno" required>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="inputposition">Position</label>
                                                 <select id="inputposition" class="form-control" name="position">
-                                                    <option selected>owner</option>
-                                                    <option>loner</option>
-                                                    <option>boner</option>
+                                                    <option selected>Cook</option>
+                                                    <option>Manager</option>
+                                                    <option>Supervisor</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
@@ -244,7 +250,7 @@ $nam= name();
                                             </div>
 
 
-                                        </div>
+                                       </div>
                                 </div>
 
                                 <div class="form-row">
@@ -254,9 +260,8 @@ $nam= name();
                                                    name="submit-emp" class="btn btn-primary col-sm-3 btn-user ">
                                         </div>
                                     </div>
-                                    </form>
-
                                 </div>
+                                </form>
                             </div>
 
                             <!--                             Approach -->
@@ -268,6 +273,7 @@ $nam= name();
                 <!-- /.container-fluid -->
 
             </div>
+        </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->

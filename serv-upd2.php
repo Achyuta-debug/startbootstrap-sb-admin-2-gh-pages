@@ -68,9 +68,7 @@ session_start();
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Components:</h6>-->
                     <a class="collapse-item" href="Admin-reg.php">Register</a>
-                    <a class="collapse-item" href="tables.html">Update</a>
-                    <a class="collapse-item" href="tables.html">Delete</a>
-                    <a class="collapse-item" href="tables.html">View</a>
+                    <a class="collapse-item" href="Adm-view.php">Delete/View</a>
                     <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
                 </div>
             </div>
@@ -82,8 +80,8 @@ session_start();
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="404.html">Add</a>
-                    <a class="collapse-item" href="blank.html">Delete/Update</a>
+                    <a class="collapse-item" href="Add-new.php">Add</a>
+                    <a class="collapse-item" href="Serv-upd.php">Delete/Update</a>
                 </div>
             </div>
         </li>
@@ -96,8 +94,8 @@ session_start();
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="utilities-color.html">View</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Adm-cust-view.php">View</a>
+                    <a class="collapse-item" href="Admin-bill.php">Bills</a>
                 </div>
             </div>
         </li>
@@ -170,7 +168,7 @@ session_start();
                                     <h4 class="m-0 font-weight-bold text-primary">Update services</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="index.php" method="post">
+                                    <form action="Serv-upd.php" method="post">
                                         <div class="text-primary">
                                             <!--                                <form action="Employee.php" method="post">-->
                                             <div class="form-row">

@@ -10,7 +10,7 @@ $billid = "DELBILL" . generatekey();
 $_SESSION['billid'] = $billid;
 ?>
     <!DOCTYPE html>
-    <html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
     <head>
 
@@ -285,7 +285,7 @@ $_SESSION['billid'] = $billid;
                                                 }
                                                 ?>
                                             </tbody>
-                                            </table>
+                                        </table>
 
                                         </div>
                                 </div>

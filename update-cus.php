@@ -178,10 +178,8 @@ $name=name();
                                             echo "<tr><td>".$name."</td><td>".$cus_id."</td><td>".
                                                 $roomtype."</td><td>".$todate.
                                                 "</td><td>".$roomno."</td><td><a href='update-cus2.php? ron=$roomno'>
-                                                 <button class='btn btn-primary'>Update</button></a></td>";
-
-
-
+                                                 <button class='btn btn-outline-primary'>Update</button></a></td>";
+                                            
                                         }
                                     }
                                     ?>

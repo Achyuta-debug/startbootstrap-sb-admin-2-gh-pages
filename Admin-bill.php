@@ -1,19 +1,9 @@
 <?php
+session_start();
 include "function.php";
-if(isset($_POST['submit-ser'])){
-    $name=$_POST['sname'];
-    $sprice=$_POST['sprice'];
-    $sid=generatesid();
-    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
-    $query = "INSERT INTO services(service_id, service_name, price) VALUES ('$sid','$name',$sprice)";
-    $result = mysqli_query($connect, $query);
-    if(!$result){
-        die("query failed".mysqli_error($connect));
-    }
-
-}
-
+$name=name();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,14 +15,18 @@ if(isset($_POST['submit-ser'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Delights-Dashbord</title>
+    <title>SB Admin 2 - Tables</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -75,9 +69,7 @@ if(isset($_POST['submit-ser'])){
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Components:</h6>-->
                     <a class="collapse-item" href="Admin-reg.php">Register</a>
-                    <a class="collapse-item" href="tables.html">Update</a>
-                    <a class="collapse-item" href="tables.html">Delete</a>
-                    <a class="collapse-item" href="tables.html">View</a>
+                    <a class="collapse-item" href="Adm-view.php">Delete/View</a>
                     <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
                 </div>
             </div>
@@ -103,8 +95,8 @@ if(isset($_POST['submit-ser'])){
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="utilities-color.html">View</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Adm-cust-view.php">View</a>
+                    <a class="collapse-item" href="Admin-bill.php">Bills</a>
                 </div>
             </div>
         </li>
@@ -143,12 +135,14 @@ if(isset($_POST['submit-ser'])){
 
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Achyuta</span>
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $name?></span>
                             <!--                            <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                         </a>
                         <!-- Dropdown - User Information -->
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                             aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="#">
                                 <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Profile settings
@@ -168,105 +162,147 @@ if(isset($_POST['submit-ser'])){
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <div class="container-fluid">
-                    <div class="row">
 
-                        <div class="col-lg-12 mb-8">
-                                <div class="card shadow mb-8">
-                                    <div class="card-header py-8">
-                                        <h4 class="m-0 font-weight-bold text-primary">Add services</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <form action="Add-new.php" method="post">
-                                        <div class="text-primary">
-                                            <!--                                <form action="Employee.php" method="post">-->
-                                            <div class="form-row">
+                <!-- Page Heading -->
 
-                                                <div class="form-group col-md-6">
-                                                    <label for="servicename">Service Name:</label>
-                                                    <input type="text"  class="form-control"
-                                                           id="servicename" name="sname" required>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="serviceprice">Service price</label>
-                                                    <input type="number" max="5000" class="form-control"
-                                                           id="serviceprice" name="sprice" required>
-                                                </div>
-                                            </div>
-                                        </div>
-                                            <div class="form-group col-md-12">
-                                                <div class="text-center">
-                                                    <input type="submit" value="Add"
-                                                           name="submit-ser" class="btn btn-primary col-sm-3 btn-user ">
-                                                </div>
-                                            </div>
-                                        </form>
-                                              </div>
-                                </div>
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h4 class="m-0 font-weight-bold text-primary">Bills</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
+                                <thead class="bg-primary">
+                                <tr class="text-white">
+                                    <th>Bill ID</th>
+                                    <th>Customer ID</th>
+                                    <th>Services Amount</th>
+                                    <th>Tax</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tbody>
+                                <?php
+                                $connection = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+                                if(!$connection){
+                                    die("query failed".mysqli_connect_error());
+                                }
+                                $query="SELECT * FROM billing";
+                                $result=$connection->query($query);
+                                if($result->num_rows>0){
+                                    while($row=$result->fetch_assoc()){
+                                        $bill_id=$row['bill_id'];
+                                        $cid=$row['customer_id'];
+                                        $amt=$row['amt_from_service'];
+                                        $tax= $row['tax'];
+                                        $total = $row['total_amt'];
+                                        echo "<tr><td>".$bill_id."</td><td>".$cid."</td><td>".
+                                            $amt."</td><td>".$tax."</td><td>".$total."</td></tr>";
+                                    }
+                                }
+                                ?>
+
+
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- End of Main Content -->
 
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Delights 1995-2020</span>
+
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!--        <div class="alert alert-primary" role="alert">-->
+            <!--            SERVICE Added Successfully.-->
+            <!--        </div>-->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.php">Logout</a>
                 </div>
             </div>
-        </footer>
-        <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-</div>
-<!-- End of Page Wrapper -->
-
-<!-- Scroll to Top Button-->
-<a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-<!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.php">Logout</a>
-            </div>
         </div>
     </div>
-</div>
 
-<!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
 
-<!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-<!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -25,22 +25,72 @@ if (isset($_POST['submit-emp'])){
         die("query failed". mysqli_error($connect));
     }
 }
-if(isset($_POST['Update-ser'])){
-    $sid=$_POST['sid'];
-    $sname=$_POST['sname'];
-    $sprice=$_POST['sprice'];
+
+if(isset($_GET['sid'])){
+    $sid=$_GET['sid'];
     $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
-    $query = "UPDATE services SET service_name = '$sname', price = $sprice WHERE service_id = '$sid'";
+    $query = "DELETE  FROM services  WHERE service_id = '$sid'";
     $result = mysqli_query($connect, $query);
     if(!$result){
         die("query failed".mysqli_error($connect));
     }
-
+    header("Location:/startbootstrap-sb-admin-2-gh-pages/Serv-upd.php");
 }
 
+if(isset($_GET['eid'])){
+    $eid=$_GET['eid'];
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $query = "DELETE FROM employees  WHERE emp_id = '$eid'";
+    $result = mysqli_query($connect, $query);
+    if(!$result){
+        die("query failed".mysqli_error($connect));
+    }
+    header("Location:/startbootstrap-sb-admin-2-gh-pages/Adm-view.php");
+}
 
+$connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+$query1 = "SELECT IFNULL(COUNT(*),0) AS nocustomers FROM customers_logs ";
+$result1 = mysqli_query($connect, $query1);
+if(!$result1){
+    die("query failed".mysqli_error($connect));
+}
+$row1=mysqli_fetch_assoc($result1);
+$var1=$row1['nocustomers'];
+
+
+$query2 = "SELECT IFNULL(COUNT(*),0) as cusac FROM customers";
+$result2 = mysqli_query($connect, $query2);
+if(!$result2){
+     die("query failed".mysqli_error($connect));
+}
+$row2=mysqli_fetch_assoc($result2);
+$var2=$row2['cusac'];
+
+$query3 = "SELECT EXTRACT(MONTH FROM customers_logs.from_date) AS month,IFNULL(AVG(billing.total_amt),0) AS avgtotal FROM billing 
+            JOIN customers_logs 
+                ON billing.customer_id = customers_logs.customer_id 
+            GROUP BY month";
+$result3 = mysqli_query($connect, $query3);
+if(!$result3){
+    die("query failed".mysqli_error($connect));
+}
+if($row3=mysqli_num_rows($result3)>0){
+    $row3=mysqli_fetch_assoc($result3);
+    $var3=$row3['avgtotal'];
+    $var3=(int)$var3;
+}
+else {
+    $var3 = 0;
+}
+$query4 = "SELECT IFNULL(COUNT(*),0) AS emp FROM employees";
+$result4 = mysqli_query($connect, $query4);
+if(!$result4){
+    die("query failed".mysqli_error($connect));
+}
+$row4=mysqli_fetch_assoc($result4);
+$var4=$row4['emp'];
 ?>
-<!DOCTYPE html>
+<!DOCT;YPE html>
 <html lang="en">
 
 
@@ -102,9 +152,7 @@ if(isset($_POST['Update-ser'])){
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Components:</h6>-->
                     <a class="collapse-item" href="Admin-reg.php">Register</a>
-                    <a class="collapse-item" href="tables.html">Update</a>
-                    <a class="collapse-item" href="tables.html">Delete</a>
-                    <a class="collapse-item" href="tables.html">View</a>
+                    <a class="collapse-item" href="Adm-view.php">Delete/View</a>
                     <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
                 </div>
             </div>
@@ -125,13 +173,13 @@ if(isset($_POST['Update-ser'])){
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-wrench"></i>
-                <span>Customer</span>
+                <span>Customers</span>
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="utilities-color.html">View</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Adm-cust-view.php">View</a>
+                    <a class="collapse-item" href="Admin-bill.php">Bills</a>
                 </div>
             </div>
         </li>
@@ -232,8 +280,8 @@ if(isset($_POST['Update-ser'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Average Earnings (Monthly)</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $var3 ?></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -249,8 +297,8 @@ if(isset($_POST['Update-ser'])){
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Active Customers</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $var2 ?></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -268,7 +316,7 @@ if(isset($_POST['Update-ser'])){
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Customers(total)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">10,000</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $var1 ?></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-wrench fa-2x text-gray-300"></i>
@@ -284,7 +332,7 @@ if(isset($_POST['Update-ser'])){
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Empoyees(Total)</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $var4 ?></div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-cog fa-2x text-gray-300"></i>

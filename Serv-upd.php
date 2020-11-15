@@ -2,9 +2,17 @@
 session_start();
 include "function.php";
 $name=name();
-if(isset($_POST['roomno'])){
-    $_SESSION['roomno']=$_POST['roomno'];
-    header("Location:/startbootstrap-sb-admin-2-gh-pages/customer-services.php");
+if(isset($_POST['Update-ser'])){
+    $sid=$_POST['sid'];
+    $sname=$_POST['sname'];
+    $sprice=$_POST['sprice'];
+    $connect = mysqli_connect('localhost', 'root', 'Achyuta123', 'hotel');
+    $query = "UPDATE services SET service_name = '$sname', price = $sprice WHERE service_id = '$sid'";
+    $result = mysqli_query($connect, $query);
+    if(!$result){
+        die("query failed".mysqli_error($connect));
+    }
+
 }
 
 ?>
@@ -75,9 +83,7 @@ if(isset($_POST['roomno'])){
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Components:</h6>-->
                     <a class="collapse-item" href="Admin-reg.php">Register</a>
-                    <a class="collapse-item" href="tables.html">Update</a>
-                    <a class="collapse-item" href="tables.html">Delete</a>
-                    <a class="collapse-item" href="tables.html">View</a>
+                    <a class="collapse-item" href="Adm-view.php">Delete/View</a>
                     <!--            <a class="collapse-item" href="cards.html">Cards</a>-->
                 </div>
             </div>
@@ -89,8 +95,8 @@ if(isset($_POST['roomno'])){
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="404.html">Add</a>
-                    <a class="collapse-item" href="blank.html">Delete/Update</a>
+                    <a class="collapse-item" href="Add-new.php">Add</a>
+                    <a class="collapse-item" href="Serv-upd.php">Delete/Update</a>
                 </div>
             </div>
         </li>
@@ -103,8 +109,8 @@ if(isset($_POST['roomno'])){
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <!--            <h6 class="collapse-header">Custom Utilities:</h6>-->
-                    <a class="collapse-item" href="utilities-color.html">View</a>
-                    <a class="collapse-item" href="utilities-border.html">View bills</a>
+                    <a class="collapse-item" href="Adm-cust-view.php">View</a>
+                    <a class="collapse-item" href="Admin-bill.php">Bills</a>
                 </div>
             </div>
         </li>
@@ -175,7 +181,7 @@ if(isset($_POST['roomno'])){
 
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h4 class="m-0 font-weight-bold text-primary">Add Services</h4>
+                        <h4 class="m-0 font-weight-bold text-primary">Update Services</h4>
                     </div>
                     <div class="card-body">
                             <div class="table-responsive">
@@ -205,9 +211,9 @@ if(isset($_POST['roomno'])){
                                                 $price.
                                                 "</td><td>
                                                    <a href='serv-upd2.php?sid=$sid& sname=$sname &sprice=$price'>
-                                                 <button class='btn btn-outline-success'>Update</button></a></td><td>".
-                                                  "<a href='Serv-upd2.php?sid=$sid & sname=$sname &sprice=$price'>
-                                                 <button class='btn btn-outline-danger'>Delete</button></a></td><td>";
+                                                 <button class='btn btn-outline-primary'>Update</button></a></td><td>".
+                                                  "<a href='index.php?sid=$sid'>
+                                                 <button class='btn btn-outline-danger'>Delete</button></a></td></tr>";
                                         }
                                     }
                                     ?>
